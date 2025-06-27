@@ -1,0 +1,427 @@
+/* ======================================== */
+/* INÍCIO CONFIGURAÇÃO GERAL DAS TAGS       */
+/* ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body,html {
+    height: 100%;
+    background-color: #151515;
+    color: #ffd000;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+footer {
+    background-color: #ffd000;
+
+
+    
+}
+
+
+
+.containerMain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 10px;
+}
+/* ======================================== */
+/* FIM CONFIGURAÇÃO GERAL DAS TAGS          */
+/* ======================================== */
+
+/* ======================================== */
+/* INÍCIO CONFIGURAÇÃO MENU NAVBAR          */
+/* ======================================== */
+#containerNavTop {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffd000;
+    color: #000;
+    position: relative;
+    padding-right: 10px;
+}
+
+.menuNav {
+    visibility: hidden;
+}
+
+.BotaofecharCarrinho {
+    display: flex;
+    justify-content: flex-start;
+    padding: 3px;
+}
+
+.BotaofecharCarrinho img {
+    height: 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.BotaofecharCarrinho img:hover {
+    box-shadow: 0px 0px 5px 1px #ffd000;
+}
+
+.containerCarrinhoNav {
+    position: absolute;
+    height: 300px;
+    width: 400px;
+    right: 10px;
+    top: 46px;
+    background-color: #000;
+    color: #fff;
+    box-shadow: -3px 3px 6px 1px #E6B800;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.containerCarrinhoNav:hover {
+    box-shadow: -3px 3px 6px 2px #ffd000;
+}
+
+#inputCarrinho {
+    width: 40px;
+    display: flex;
+    padding: 2px;
+    color: #ffd000;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-align: center;
+    padding-left: 12px;
+    user-select: none;
+}
+
+.quantidadeItemDentroCarrinho {
+    display: flex;
+    position: relative;
+    padding: 10px;
+    background-color: #000000;
+    box-shadow: 3px 3px 4px 2px #E6B800;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 10px;
+}
+
+.quantidadeItemDentroCarrinho:hover {
+    box-shadow: 3px 3px 5px 3px #ffd000;
+}
+
+.btMaisCarrinho, .btMenosCarrinho, .removerItemCarrinho {
+    padding: 3px;
+    width: 60px;
+    color: #000;
+    background-color: #E6B800;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btMaisCarrinho:hover, .btMenosCarrinho:hover, .removerItemCarrinho:hover {
+    background-color: #ffd000;
+    color: #000;
+}
+
+.removerItemCarrinho {
+    position: absolute;
+    right: 10px;
+    border-radius: 10px;
+}
+
+.btMaisCarrinho {
+    margin-left: 30px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.btMenosCarrinho {
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.containerBtMaisMenosCarrinho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.valorTotalCarrinho {
+    position: absolute;
+    bottom: 0;
+    width: 300px;
+    height: 80px;
+    text-align: center;
+    margin: calc(10%);
+    box-shadow: 1px 1px 7px 1px #c19e00;
+    color: #000;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 10px;
+    background-color: #E6B800;
+    user-select: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.valorTotalCarrinho:hover {
+    background-color: #ffd000;
+}
+
+.itemCarrinho {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+}
+
+.itemCarrinho img {
+    height: 60px;
+}
+/* ======================================== */
+/* FIM CONFIGURAÇÃO MENU NAVBAR             */
+/* ======================================== */
+
+/* ======================================== */
+/* INÍCIO CONFIGURAÇÃO SECTION LANCHE       */
+/* ======================================== */
+.sectionLanche {
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.sectionLanche > .itemLanche:first-child{
+    display: none;
+}
+.itemLanche {
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #000000;
+    padding: 15px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: 4px 5px 4px 1px #E6B800;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.itemLanche img:not(.containerImgImagemBotao img) {
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: 4px 5px 4px 1px #E6B800;
+}
+
+.itemLanche:hover {
+    box-shadow: 4px 5px 5px 2px #ffd000;
+}
+
+.btnContainer {
+    width: 100px;
+}
+
+.infoLanche {
+    margin-left: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+.imgBotaoAbrirModal {
+    display: flex;
+    border-bottom-right-radius: 13px;
+    border-top-left-radius: 13px;
+    background-color: #E6B800;
+    color: black;
+    padding: 2px;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.imgBotaoAbrirModal:hover {
+    background-color: #ffd000;
+    box-shadow: 0px 0px 1px 2px #E6B800;
+}
+
+.imgBotaoAbrirModal img {
+    height: 20px;
+}
+
+.containerImgImagemBotao {
+    display: flex;
+    width: 25px;
+    padding: 1px;
+    background-color: black;
+    border-top-left-radius: 10px;
+}
+/* ======================================== */
+/* FIM CONFIGURAÇÃO SECTION LANCHE          */
+/* ======================================== */
+
+/* ======================================== */
+/* INÍCIO CONFIGURAÇÃO ITEM LANCHE MODAL    */
+/* ======================================== */
+.esconde {
+    display: none;
+}
+
+.containerModal.esconderModal {
+    display: none;
+}
+
+.containerModal {
+    background-color: #000000ad;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    display: flex;
+
+    
+}
+
+.itemLancheModal {
+    background-color: #151515fa;
+    margin: auto;
+    width: 800px;
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    position: relative;
+    box-shadow: 0px 3px 10px 1px #E6B800;
+    user-select: none;
+}
+
+.itemLancheModal:hover {
+    box-shadow: 0px 3px 7px 2px #ffd000;
+}
+
+.fecharModal {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 10px;
+    margin-top: 2px;
+    font-size: 30px;
+    user-select: none;
+    cursor: pointer;
+    width: 35px;
+}
+
+.fecharModal:hover {
+    color: red;
+}
+
+.imgLancheModal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgLancheModal img {
+    width: 310px;
+    height: 300px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    box-shadow: 3px 3px 5px 1px #ffd000;
+}
+
+.infoLancheModal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.containerTituloInfoLancheModal {
+    display: block;
+    height: 150px;
+}
+
+.btnContainerModal {
+    display: flex;
+    justify-content: center;
+}
+
+.containerValorImagemBtnModal {
+    padding: 10px;
+}
+
+.nomeLancheModal {
+    font-size: 40px;
+}
+
+.botaoModal {
+    background-color: #E6B800;
+    border: none;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 20px;
+    width: 500px;
+}
+
+.botaoModal:hover {
+    background-color: #ffd000;
+}
+
+.qtItem {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.btnMais, .btnMenos {
+    user-select: none;
+    width: 100px;
+    cursor: pointer;
+    background-color: #E6B800;
+    color: #000;
+    font-weight: bolder;
+}
+
+.btnMais:hover, .btnMenos:hover {
+    background-color: #ffd000;
+}
+
+.btnMais {
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.btnMenos {
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.containerValorImagemBtnModal input {
+    height: 50px;
+    width: 230px;
+}
+
+.btnModal {
+    display: flex;
+}
+/* ======================================== */
+/* FIM CONFIGURAÇÃO ITEM LANCHE MODAL       */
+/* ======================================== */
