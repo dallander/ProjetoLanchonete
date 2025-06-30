@@ -23,7 +23,16 @@ footer {
     
 }
 
-
+.logo {
+    width: 170px;
+    position: absolute;
+    top: -20px;
+    
+}
+.containerimgCarrinho{
+    display: flex;
+    align-items: center;
+}
 
 .containerMain{
     display: flex;
@@ -31,7 +40,7 @@ footer {
     justify-content: center;
     flex-direction: column;
     min-height: 100vh;
-    padding: 10px;
+
 }
 /* ======================================== */
 /* FIM CONFIGURAÇÃO GERAL DAS TAGS          */
@@ -45,13 +54,11 @@ footer {
     justify-content: space-between;
     background-color: #ffd000;
     color: #000;
-    position: relative;
     padding-right: 10px;
+    height: 140px;
 }
 
-.menuNav {
-    visibility: hidden;
-}
+
 
 .BotaofecharCarrinho {
     display: flex;
@@ -66,15 +73,15 @@ footer {
 }
 
 .BotaofecharCarrinho img:hover {
-    box-shadow: 0px 0px 5px 1px #ffd000;
+    box-shadow: 0px 0px 4px 2px red;
 }
 
 .containerCarrinhoNav {
     position: absolute;
-    height: 300px;
+    height: 400px;
     width: 400px;
     right: 10px;
-    top: 46px;
+    top: 150px;
     background-color: #000;
     color: #fff;
     box-shadow: -3px 3px 6px 1px #E6B800;
@@ -86,7 +93,7 @@ footer {
     box-shadow: -3px 3px 6px 2px #ffd000;
 }
 
-#inputCarrinho {
+.inputCarrinho {
     width: 40px;
     display: flex;
     padding: 2px;
@@ -97,6 +104,7 @@ footer {
     text-align: center;
     padding-left: 12px;
     user-select: none;
+    font-size: 19px;
 }
 
 .quantidadeItemDentroCarrinho {
@@ -124,11 +132,13 @@ footer {
     user-select: none;
 }
 
-.btMaisCarrinho:hover, .btMenosCarrinho:hover, .removerItemCarrinho:hover {
-    background-color: #ffd000;
+ .btMenosCarrinho:hover, .removerItemCarrinho:hover {
+    background-color: red;
     color: #000;
 }
-
+.btMaisCarrinho:hover {
+    background-color: #ffd000;
+}
 .removerItemCarrinho {
     position: absolute;
     right: 10px;
@@ -194,11 +204,15 @@ footer {
     height: 100%;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 10px;
 
 }
 .sectionLanche > .itemLanche:first-child{
     display: none;
 }
+
+
+
 .itemLanche {
     width: 350px;
     display: flex;
@@ -242,10 +256,15 @@ footer {
     background-color: #E6B800;
     color: black;
     padding: 2px;
-    width: 100%;
+    width: 110%;
     margin-top: 10px;
     cursor: pointer;
     user-select: none;
+    
+    
+}
+.imgBotaoAbrirModal h4 {
+    margin-left: 10px;
 }
 
 .imgBotaoAbrirModal:hover {
@@ -255,6 +274,7 @@ footer {
 
 .imgBotaoAbrirModal img {
     height: 20px;
+  
 }
 
 .containerImgImagemBotao {
@@ -264,6 +284,9 @@ footer {
     background-color: black;
     border-top-left-radius: 10px;
 }
+
+
+
 /* ======================================== */
 /* FIM CONFIGURAÇÃO SECTION LANCHE          */
 /* ======================================== */
@@ -272,7 +295,7 @@ footer {
 /* INÍCIO CONFIGURAÇÃO ITEM LANCHE MODAL    */
 /* ======================================== */
 .esconde {
-    display: none;
+    display: none !important ;
 }
 
 .containerModal.esconderModal {
@@ -294,8 +317,8 @@ footer {
 .itemLancheModal {
     background-color: #151515fa;
     margin: auto;
-    width: 800px;
-    height: 500px;
+    width: 700px;
+    height: 400px;
     display: flex;
     justify-content: space-around;
     padding: 10px;
@@ -304,7 +327,9 @@ footer {
     position: relative;
     box-shadow: 0px 3px 10px 1px #E6B800;
     user-select: none;
+    
 }
+
 
 .itemLancheModal:hover {
     box-shadow: 0px 3px 7px 2px #ffd000;
@@ -334,19 +359,22 @@ footer {
 }
 
 .imgLancheModal img {
-    width: 310px;
-    height: 300px;
+    width: 220px;
+    height: 220px;
     border-top-right-radius: 30px;
     border-bottom-left-radius: 30px;
     box-shadow: 3px 3px 5px 1px #ffd000;
 }
 
 .infoLancheModal {
-    width: 100%;
+    width: auto;
+    height: 350px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    align-items: center;
+
 }
 
 .containerTituloInfoLancheModal {
@@ -359,9 +387,7 @@ footer {
     justify-content: center;
 }
 
-.containerValorImagemBtnModal {
-    padding: 10px;
-}
+
 
 .nomeLancheModal {
     font-size: 40px;
@@ -375,7 +401,6 @@ footer {
     cursor: pointer;
     font-weight: bolder;
     font-size: 20px;
-    width: 500px;
 }
 
 .botaoModal:hover {
@@ -383,7 +408,7 @@ footer {
 }
 
 .qtItem {
-    height: 100px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -393,11 +418,12 @@ footer {
 
 .btnMais, .btnMenos {
     user-select: none;
-    width: 100px;
+    width: 90px;
     cursor: pointer;
     background-color: #E6B800;
     color: #000;
     font-weight: bolder;
+    font-size: 26px;
 }
 
 .btnMais:hover, .btnMenos:hover {
@@ -413,14 +439,31 @@ footer {
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
 }
+.btnMenos:hover{
+    background-color: red;
+}
 
 .containerValorImagemBtnModal input {
     height: 50px;
-    width: 230px;
+    width: 240px;
 }
 
 .btnModal {
     display: flex;
+}
+
+.valorIndividualModal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 50px;
+    width: 100px;
+    font-size: 19px;
+    box-shadow: 1px 2px 2px 1px red;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;    
+    margin-right: 7px;
 }
 /* ======================================== */
 /* FIM CONFIGURAÇÃO ITEM LANCHE MODAL       */

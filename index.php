@@ -12,10 +12,12 @@
     <!--INÍCIO CONFIGURAÇÃO DO NAVBAR-->
     <nav id="containerNavTop">
         <div class="menuNav">
-            <h2>Menu</h2>
+            <img src="assets/images/logo/logodom.png" alt="logo" class="logo">
             
         </div>
-        <img src="assets/images/bt_img/carrinho.png" alt="" id="cartimg">
+        <div class="containerimgCarrinho">
+            <img src="assets/images/bt_img/carrinho.png" alt="" id="cartimg">
+        </div>
         <div class="containerCarrinhoNav esconde">
 
             <div class="BotaofecharCarrinho">
@@ -26,13 +28,13 @@
                 <div class="itemCarrinho">
                     
                     <div class="quantidadeItemDentroCarrinho">
-                        <img src="assets/images/imgLanche/batataFrita.jpeg" alt="item">
+                        <img src="assets/images/imgLanche/1.png" alt="item">
                         <div class="containerBtMaisMenosCarrinho">
                             <div class="btMaisCarrinho">
                                 +
                             </div>
                             <div class="quantidade">
-                                <input type="number" name="" id="inputCarrinho" min="1" value="1" readonly>
+                                <input type="number" name="" class="inputCarrinho" min="1" value="1" readonly>
                             </div>
 
                             <div class="btMenosCarrinho">
@@ -56,6 +58,7 @@
 
         </div>
     </nav>
+
     <!--FIM CONFIGURAÇÃO DO NAVBAR-->
     <main class="containerMain">
     <!--INÍCIO CONFIGURAÇÃO SECTION LANCHE-->
@@ -63,11 +66,11 @@
             <!--INÍCIO CONFIGURAÇÃO DO ITEM LANCHE-->
             <div class="itemLanche ">
                 <div class="imgLanche">
-                    <img src="assets/images/imgLanche/batataFrita.jpeg" alt="lanche x">
+                    <img src="assets/images/imgLanche/1.png" alt="lanche x" class ="imgIndividual">
                 </div>
                 <div class="infoLanche">
                     <div class="containerTituloInfoLanche">
-                        <h3 class="nomeLanche">Nome lanche</h3>
+                        <h4 class="nomeLanche">Nome lanche</h4>
                     </div>
                     <div class="btnContainer">
                         <div class="imgBotaoAbrirModal">
@@ -75,7 +78,7 @@
                                 <img src="assets/images/bt_img/botao.png" alt="imagemAbrirModal">
                             </div>
                             <div class="containerValorImagemBtn">
-                                <h4>R$ 10.99</h4>
+                                <h4 class="precoItem">R$ 10.99</h4>
                             </div>
 
                         </div>
@@ -84,32 +87,36 @@
 
                 <!--INÍCIO CONFIGURAÇÃO DO ITEM LANCHE MODAL-->
                 <div class="containerModal esconderModal ">
-                    <div class="itemLancheModal ">
-                        <div class="imgLancheModal">
-                            <img src="assets/images/imgLanche/batataFrita.jpeg" alt="lanche x">
+                    <div class="itemLancheModal">
+                        <div class="imgLancheModal ">
+                            <img src="assets/images/imgLanche/1.png" alt="lanche x" class="imgModalLanche">
                         </div>
                         <div class="infoLancheModal">
                             <div class="fecharModal">
                                     x
                             </div>
                             <div class="containerTituloInfoLancheModal">
-                                <h1 class="nomeLancheModal">Nome lanche</h1>
+                                <h1 class="nomeLancheModal ">MOdal</h1>
                                 
                                 <div class="qtItem">
                                 
                                     <div class="btnMais">
                                         +
                                     </div>
-                                    valor
-                                    <div class="btnMenos">
+                                    <input type="number" name="" class="inputCarrinho" min="1" value="1"  readonly>
+                                    <div class="btnMenos ">
                                         -
                                     </div>
                                 </div>
                             </div>
                                 
                             <div class="btnContainerModal">
-                                <div class="btnModal">
 
+                                <div class="valorIndividualModal">
+                                    <h4 class="precoItem">R$ 10.99</h4>
+                                </div>
+
+                                <div class="btnModal">
                                     <div class="containerValorImagemBtnModal">
                                         <input type="button" value="Adicionar ao carrinho" class="botaoModal">
                                     </div>

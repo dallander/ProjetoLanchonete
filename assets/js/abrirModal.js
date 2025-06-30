@@ -63,6 +63,7 @@ function fechaCarrinho (){
 
 
 
+
 //CHAMANDO A FUNÇÃO ABRIR MODAL
 abrirModal();
 //CHAMANDO A FUNÇÃO FECHAR MODAL

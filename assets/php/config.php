@@ -9,7 +9,7 @@
     $dbname     = $_ENV["DB_NAME"];//NOME DO BANCO
     $user       = $_ENV["DB_USER"];//USUÁRIO DE ACESSO AO BANCO
     $pass       = $_ENV["DB_PASS"];//SENHA DE ACESSO AO BANCO
-    $port       = $_ENV["DB_PORT"];
+    $port       = $_ENV["DB_PORT"];//PORTA DE ACESSO AO BANCO 
   
         
 
