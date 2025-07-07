@@ -35,12 +35,30 @@ fetch("assets/php/config.php")
       const modal = item.querySelector(".itemLancheModal")
       modal.querySelector(".imgModalLanche").src=img;
       modal.querySelector(".nomeLancheModal ").textContent=nome;
-      modal.querySelector(".valorIndividualModal").textContent=`R$ ${valor}`;
+      modal.querySelector(".valorIndividualModal").textContent=`${valor}`;
     }
 
     
   })
   
  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //CHAMA A FUNÇÃO capturaItem
  capturaItem();
+

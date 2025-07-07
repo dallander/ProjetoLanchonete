@@ -52,12 +52,54 @@ footer {
 #containerNavTop {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: #ffd000;
     color: #000;
     padding-right: 10px;
     height: 140px;
 }
+.containerimgCarrinho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#consultarPedido{
+    border: none;
+    outline: none;
+    height: 30px;
+    width: 300px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding-left: 15px;
+    font-size: 16px;
+    box-shadow: 1px 2px 2px 2px #0c0c0c;
+}
 
+#consultarPedido::placeholder{
+    padding-left: 3px;
+    color: #5c5b5b;
+    font-size: 16px;
+    
+}
+.consultarPedido label{
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.botaoConsultaPedido {
+    border: none;
+    height: 32px;
+    width: 90px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    cursor: pointer;
+    background: #E6B800;
+    font-weight: bolder;
+    font-size: 16px;
+}
+.botaoConsultaPedido:hover{
+    box-shadow: 1px 1px 2px 1px #000000;
+}
 
 
 .BotaofecharCarrinho {
@@ -93,10 +135,10 @@ footer {
     box-shadow: -3px 3px 6px 2px #ffd000;
 }
 
-.inputCarrinho {
-    width: 40px;
+.inputCmodal {
+    width: 50px;
     display: flex;
-    padding: 2px;
+
     color: #ffd000;
     background-color: transparent;
     border: none;
@@ -122,8 +164,8 @@ footer {
 }
 
 .btMaisCarrinho, .btMenosCarrinho, .removerItemCarrinho {
-    padding: 3px;
-    width: 60px;
+
+    width: 50px;
     color: #000;
     background-color: #E6B800;
     font-weight: bold;
@@ -146,12 +188,12 @@ footer {
 }
 
 .btMaisCarrinho {
-    margin-left: 30px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
 .btMenosCarrinho {
+    margin-left: 40px;
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -317,8 +359,8 @@ footer {
 .itemLancheModal {
     background-color: #151515fa;
     margin: auto;
-    width: 700px;
-    height: 400px;
+    width: 680px;
+    height: 350px;
     display: flex;
     justify-content: space-around;
     padding: 10px;
@@ -367,7 +409,7 @@ footer {
 }
 
 .infoLancheModal {
-    width: auto;
+    width: 100%;
     height: 350px;
     display: flex;
     justify-content: center;
@@ -377,35 +419,38 @@ footer {
 
 }
 
+
 .containerTituloInfoLancheModal {
     display: block;
-    height: 150px;
+    height: 130px;
 }
 
 .btnContainerModal {
     display: flex;
     justify-content: center;
+    
 }
 
 
 
 .nomeLancheModal {
-    font-size: 40px;
+    font-size: 30px;
 }
 
-.botaoModal {
+.botaoModal{
     background-color: #E6B800;
     border: none;
     border-bottom-right-radius: 15px;
     border-top-left-radius: 15px;
     cursor: pointer;
     font-weight: bolder;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .botaoModal:hover {
     background-color: #ffd000;
 }
+
 
 .qtItem {
     height: 80px;
@@ -433,9 +478,11 @@ footer {
 .btnMais {
     border-bottom-right-radius: 15px;
     border-top-left-radius: 15px;
+    margin-left: 5px;
 }
 
 .btnMenos {
+    margin-right: 5px;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
 }
@@ -457,13 +504,20 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 50px;
+    height: 40px;
     width: 100px;
-    font-size: 19px;
+    font-size: 15px;
     box-shadow: 1px 2px 2px 1px red;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;    
     margin-right: 7px;
+
+}
+
+input.botaoModal {
+    width: 160px;
+    height: 40px;
+    
 }
 /* ======================================== */
 /* FIM CONFIGURAÇÃO ITEM LANCHE MODAL       */

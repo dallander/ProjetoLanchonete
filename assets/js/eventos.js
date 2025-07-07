@@ -59,8 +59,43 @@ function fechaCarrinho (){
     });
 };
 
+//ALMENTA A QUANTIDADE DE ITENS NO MODAL
+function adicionarItens(){
+    let c = 0;
+    document.addEventListener("click",(e)=>{
+        
+        const  qtitemais  = e.target.closest(".btnMais");
+        const container = qtitemais.closest(".itemLancheModal");
+        if(qtitemais){
+            const input = container.querySelector(".inputCmodal")
+            if (input){ 
+                const value = parseInt(input.value,10)+1
+                input.value=value;
+                
+            }
+        }
+    });
+};
+
+//DIMINUI A QUANTIDADE DE INTENS NO MODAL
+function removerItens(){
+    document.addEventListener("click", (e)=>{
+        const btmenos = e.target.closest(".btnMenos");
+        const container = btmenos.closest(".itemLancheModal");
+        if(btmenos){
+            const input = container.querySelector(".inputCmodal")
+            if(input){
+                const sub = parseInt(input.value,10)-1;
+                input.value=sub;
+                if(input.value < 1){
+                    input.value=1
+                }
+            }
+        }
 
 
+    });
+};
 
 
 
@@ -72,4 +107,7 @@ fecharModal();
 abrirCarrinho();
 //CHAMA FUNÇÃO PARA FECHAR CARRINHO
 fechaCarrinho();
-
+//CHAMA FUNÇÃO adicionarItens
+adicionarItens();
+//CHAMA A FUNÇÃO removerItens
+removerItens();

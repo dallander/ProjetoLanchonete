@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel = "icon" type ="image/x-icon" href="assets/images/logo/favicon-16x16.png">
     <title>Lanchonete</title>
 </head>
 <body>
@@ -15,9 +16,21 @@
             <img src="assets/images/logo/logodom.png" alt="logo" class="logo">
             
         </div>
+
+        <div class="consultarPedido">
+
+            <label for="consultarPedido">Digite o número do celular...</label>
+            <div class="containerBotao">
+                <input type="text" name="consultarPedido" id="consultarPedido" max="99" placeholder="Consulte seu pedido" required>
+                <button type="button" class="botaoConsultaPedido">Consultar</button>
+            </div>
+
+        </div>
+
         <div class="containerimgCarrinho">
             <img src="assets/images/bt_img/carrinho.png" alt="" id="cartimg">
         </div>
+
         <div class="containerCarrinhoNav esconde">
 
             <div class="BotaofecharCarrinho">
@@ -30,15 +43,15 @@
                     <div class="quantidadeItemDentroCarrinho">
                         <img src="assets/images/imgLanche/1.png" alt="item">
                         <div class="containerBtMaisMenosCarrinho">
-                            <div class="btMaisCarrinho">
-                                +
-                            </div>
-                            <div class="quantidade">
-                                <input type="number" name="" class="inputCarrinho" min="1" value="1" readonly>
-                            </div>
-
                             <div class="btMenosCarrinho">
                                 -
+                            </div>
+                            <div class="quantidade">
+                                <input type="number" name="" class="inputCarrinho"  max="99" value="1" readonly>
+                            </div>
+
+                            <div class=" btMaisCarrinho">
+                                +
                             </div>
                             <div class="removerItemCarrinho">
                                 X
@@ -57,6 +70,8 @@
             </div>
 
         </div>
+
+
     </nav>
 
     <!--FIM CONFIGURAÇÃO DO NAVBAR-->
@@ -100,12 +115,12 @@
                                 
                                 <div class="qtItem">
                                 
-                                    <div class="btnMais">
-                                        +
-                                    </div>
-                                    <input type="number" name="" class="inputCarrinho" min="1" value="1"  readonly>
-                                    <div class="btnMenos ">
+                                    <div class="btnMenos">
                                         -
+                                    </div>
+                                    <input type="number" name="inputCarrinho" class="inputCmodal" min ="1" value="1" readonly>
+                                    <div class=" btnMais">
+                                        +
                                     </div>
                                 </div>
                             </div>
@@ -113,12 +128,12 @@
                             <div class="btnContainerModal">
 
                                 <div class="valorIndividualModal">
-                                    <h4 class="precoItem">R$ 10.99</h4>
+                                    <h4 class="precoItem"> 10.99</h4>
                                 </div>
 
                                 <div class="btnModal">
                                     <div class="containerValorImagemBtnModal">
-                                        <input type="button" value="Adicionar ao carrinho" class="botaoModal">
+                                        <input type="button" value="Adicionar ao carrinho"  class="botaoModal">
                                     </div>
 
                                 </div>
@@ -141,7 +156,7 @@
 
 
     <script src="assets/js/ajax.js"></script>
-    <script src="assets/js/abrirModal.js"></script>
+    <script src="assets/js/eventos.js"></script>
 </body>
     <footer>
         <h1>FOOTER</h1>
