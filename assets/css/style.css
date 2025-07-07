@@ -68,7 +68,8 @@ text-align: center;
     justify-content: space-around;
     box-shadow: 1px 1px 2px 2px #ffd000;
     border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;    
+    border-bottom-left-radius: 30px;  
+    margin-top: 10px;  
 }
 .containerPrecoItemCarrinho{
     display: flex;
@@ -136,8 +137,11 @@ text-align: center;
     color: #ffd000;
     cursor: pointer;
     user-select: none;
-    font-size: 20px;
+    font-size: 21px;
     font-weight: bolder;
+    position: absolute;
+    right: 15px;
+    top: 0;
 }
 .xCarrinho:hover{
     color: #ff0000;
@@ -210,7 +214,10 @@ color: #fff;
 box-shadow: -3px 3px 6px 1px #E6B800;
 border-top-right-radius: 30px;
 border-bottom-left-radius: 30px;
-padding: 10px;
+padding: 18px;
+
+
+
 }
 
 .containerCarrinhoNav:hover {

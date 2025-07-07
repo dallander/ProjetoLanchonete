@@ -37,19 +37,20 @@
                 <li class="containerImagemCarrinho">
                     <img src="assets/images/imgLanche/2.png" alt="imagem carrinho" class="imgItem" >
                 </li>
+
                 <li class="containerPrecoItemCarrinho">
                     <div class="precoItemCarrinho">R$ 10</div>
                 </li>
+
                 <li class="containerCarrinhoMaisMenos">
                     <div class="menosCarrinho">-</div>
                     <input type="number" name="qtdCarrinho" id="qtdCarrinho" value="100" readonly>
                     <div class="maisCarrinho">+</div>
                 </li>
-                <li class="fecharCarrinho">
-                    <div class="xCarrinho">X</div>
-                </li>
+                
             </ul>
 
+            <div class="xCarrinho">X</div>
         </div>
 
 
