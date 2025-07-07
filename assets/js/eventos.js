@@ -51,7 +51,7 @@ function abrirCarrinho(){
 //FECHAR CARRINHO
 function fechaCarrinho (){
     document.addEventListener("click", function(elemento){
-        const botao = elemento.target.closest(".x");
+        const botao = elemento.target.closest(".xCarrinho");
         if(botao){
             const fecharCarrinho = document.querySelector(".containerCarrinhoNav");
             fecharCarrinho.classList.add("esconde")
@@ -61,14 +61,12 @@ function fechaCarrinho (){
 
 //ALMENTA A QUANTIDADE DE ITENS NO MODAL
 function adicionarItens(){
-    let c = 0;
     document.addEventListener("click",(e)=>{
-        
         const  qtitemais  = e.target.closest(".btnMais");
         const container = qtitemais.closest(".itemLancheModal");
-        if(qtitemais){
+        if(qtitemais !==null){
             const input = container.querySelector(".inputCmodal")
-            if (input){ 
+            if (input !==null){ 
                 const value = parseInt(input.value,10)+1
                 input.value=value;
                 
@@ -82,9 +80,9 @@ function removerItens(){
     document.addEventListener("click", (e)=>{
         const btmenos = e.target.closest(".btnMenos");
         const container = btmenos.closest(".itemLancheModal");
-        if(btmenos){
+        if(btmenos !== null){
             const input = container.querySelector(".inputCmodal")
-            if(input){
+            if(input !== null){
                 const sub = parseInt(input.value,10)-1;
                 input.value=sub;
                 if(input.value < 1){
@@ -97,6 +95,26 @@ function removerItens(){
     });
 };
 
+//ADICIONAR ITEM AO CARRINHO
+function adicionarAoCarrinho(){
+    document.addEventListener("click",(e)=>{
+        const item = e.target.closest(".botaoModal")
+        if(item){
+            const container = item.closest(".containerModal")
+
+            const itemModal = container.querySelector(".quantidadeItemDentroCarrinho")//ITEM QUE O CLIENTE ESCOLHEU
+            const areaItemCarrinho = document.querySelector(".itemCarrinho")//ÁREA DO ITEM DENTRO DO CARRINHO
+            
+            const clone = itemModal.cloneNode(true)
+            areaItemCarrinho.appendChild(clone)
+
+            
+            
+            
+        }
+    })
+}
+
 
 
 //CHAMANDO A FUNÇÃO ABRIR MODAL
@@ -105,9 +123,11 @@ abrirModal();
 fecharModal();
 //CHAMANDO A FUNÇÃO ABRIR CARRINHO
 abrirCarrinho();
-//CHAMA FUNÇÃO PARA FECHAR CARRINHO
+//CHAMA A FUNÇÃO PARA FECHAR CARRINHO
 fechaCarrinho();
-//CHAMA FUNÇÃO adicionarItens
+//CHAMA A FUNÇÃO adicionarItens
 adicionarItens();
 //CHAMA A FUNÇÃO removerItens
 removerItens();
+//CHAMA A FUNÇÁO adicionarAoCarrinho
+adicionarAoCarrinho();

@@ -21,7 +21,7 @@
 
             <label for="consultarPedido">Digite o número do celular...</label>
             <div class="containerBotao">
-                <input type="text" name="consultarPedido" id="consultarPedido" max="99" placeholder="Consulte seu pedido" required>
+                <input type="text" name="consultarPedido" id="consultarPedido"  placeholder="Consulte seu pedido" required>
                 <button type="button" class="botaoConsultaPedido">Consultar</button>
             </div>
 
@@ -33,41 +33,22 @@
 
         <div class="containerCarrinhoNav esconde">
 
-            <div class="BotaofecharCarrinho">
-               <img src="assets/images/bt_img/fechar.png" alt="" class="x">
-            </div>
-
-            <div class="areaItemCarrinho">
-                <div class="itemCarrinho">
-                    
-                    <div class="quantidadeItemDentroCarrinho">
-                        <img src="assets/images/imgLanche/1.png" alt="item">
-                        <div class="containerBtMaisMenosCarrinho">
-                            <div class="btMenosCarrinho">
-                                -
-                            </div>
-                            <div class="quantidade">
-                                <input type="number" name="" class="inputCarrinho"  max="99" value="1" readonly>
-                            </div>
-
-                            <div class=" btMaisCarrinho">
-                                +
-                            </div>
-                            <div class="removerItemCarrinho">
-                                X
-                            </div>
-                        </div>
-                    </div>
-                    <div class="valorTotalCarrinho">
-                        <div class="valorTotalContainerTitulo">
-                            <h3>Valor total</h3>
-                        </div>
-                        <div class="valor">
-                            R$ 50.00
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <ul class="ContainerItemCarrinho">
+                <li class="containerImagemCarrinho">
+                    <img src="assets/images/imgLanche/2.png" alt="imagem carrinho" class="imgItem" >
+                </li>
+                <li class="containerPrecoItemCarrinho">
+                    <div class="precoItemCarrinho">R$ 10</div>
+                </li>
+                <li class="containerCarrinhoMaisMenos">
+                    <div class="menosCarrinho">-</div>
+                    <input type="number" name="qtdCarrinho" id="qtdCarrinho" value="100" readonly>
+                    <div class="maisCarrinho">+</div>
+                </li>
+                <li class="fecharCarrinho">
+                    <div class="xCarrinho">X</div>
+                </li>
+            </ul>
 
         </div>
 
@@ -133,7 +114,7 @@
 
                                 <div class="btnModal">
                                     <div class="containerValorImagemBtnModal">
-                                        <input type="button" value="Adicionar ao carrinho"  class="botaoModal">
+                                        <input type="button" value="Adicionar ao carrinho"  class="botaoModal" readonly>
                                     </div>
 
                                 </div>
