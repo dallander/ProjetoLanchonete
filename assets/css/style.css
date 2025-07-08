@@ -53,7 +53,7 @@ padding-right: 10px;
 height: 140px;
 
 }
-.ContainerItemCarrinho ul, li {
+.item ul, li {
     list-style: none;
 }
 .containerimgCarrinho{
@@ -62,7 +62,7 @@ justify-content: center;
 align-items: center;
 text-align: center;
 }
-.ContainerItemCarrinho{
+.item{
     display: flex;
     padding: 2px;
     justify-content: space-around;
@@ -79,7 +79,7 @@ text-align: center;
 
 }
 
-.ContainerItemCarrinho img{
+.item img{
     height:80px;
     border-top-right-radius: 30px;
     border-bottom-left-radius: 30px;  
@@ -104,6 +104,7 @@ text-align: center;
     align-content: center;
     text-align: center;
     width: 60px;
+    user-select: none;
 
 }
 .maisCarrinho,
@@ -149,8 +150,9 @@ text-align: center;
 .precoItemCarrinho{
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    box-shadow: 1px 1px 2px 1px #ff0000;  
+    box-shadow: 1px 1px 1px 1px #ff0000;
     height: 30px;
+    font-weight: bolder;
     color: #ffd000;
 }
 
@@ -209,20 +211,61 @@ height: 446px;
 width: 400px;
 right: 10px;
 top: 150px;
-background-color: #000;   
+background-color: #0b0a0a;   
 color: #fff;
-box-shadow: -3px 3px 6px 1px #E6B800;
+box-shadow: -3px 3px 6px 1px #d7ac01;
 border-top-right-radius: 30px;
 border-bottom-left-radius: 30px;
 padding: 18px;
+display: flex;
+justify-content: space-between;
+flex-direction: column;
+}
+.containerCarrinhoNav > :first-child{
+    /*APLICAR DISPLAY NONE AQUI*/
+}
 
-
+.comprar{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    color: #000;
+    font-size: 20px;
+    font-weight: bolder;
+    height: 90px;
+    border-radius: 3px;
 
 }
 
-.containerCarrinhoNav:hover {
-box-shadow: -3px 3px 6px 2px #ffd000;
+
+.valorTotal {
+    height: 46px;
+    padding: 2px;
+    color: #ffd000;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 1px 1px 1px 1px #ff0000;
+    user-select: none;
 }
+.btConfirmaCompra{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 155px;
+    height: 55px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    user-select: none;
+    cursor: pointer;
+    background-color: #E6B800;
+}
+.btConfirmaCompra:hover{
+    background-color: #ffd000;
+}
+
 
 .inputCmodal {
 width: 50px;

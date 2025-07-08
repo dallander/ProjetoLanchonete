@@ -102,8 +102,8 @@ function adicionarAoCarrinho(){
         if(item){
             const container = item.closest(".containerModal")
 
-            const itemModal = container.querySelector(".quantidadeItemDentroCarrinho")//ITEM QUE O CLIENTE ESCOLHEU
-            const areaItemCarrinho = document.querySelector(".itemCarrinho")//ÁREA DO ITEM DENTRO DO CARRINHO
+            const itemModal = container.querySelector(".item")//ITEM QUE O CLIENTE ESCOLHEU
+            const areaItemCarrinho = document.querySelector(".containerCarrinhoNav")//ÁREA DO ITEM DENTRO DO CARRINHO
             
             const clone = itemModal.cloneNode(true)
             areaItemCarrinho.appendChild(clone)

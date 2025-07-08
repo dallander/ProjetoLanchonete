@@ -33,7 +33,7 @@
 
         <div class="containerCarrinhoNav esconde">
 
-            <ul class="ContainerItemCarrinho">
+            <ul class="item">
                 <li class="containerImagemCarrinho">
                     <img src="assets/images/imgLanche/2.png" alt="imagem carrinho" class="imgItem" >
                 </li>
@@ -51,8 +51,17 @@
             </ul>
 
             <div class="xCarrinho">X</div>
+            <div class="comprar">
+                <div class="valorTotal">
+                    R$ 100.00
+                </div>
+                <div class="btConfirmaCompra">
+                    Comprar
+                </div>
+            </div>
         </div>
 
+        
 
     </nav>
 
