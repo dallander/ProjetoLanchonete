@@ -22,16 +22,17 @@ fetch("assets/php/config.php")
 });
 
  //CAPTURA O ITEM PARA O MODAL
- function capturaItem(){
+ function capturaItem(item){
   
     document.addEventListener("click", function(t){
-
-      //SELECIONEI AS INFORMAÇÕES DO ITEM 
-    const item = t.target.closest(".itemLanche")
-    const img = item.querySelector(".imgIndividual").src;
-    const nome = item.querySelector(".nomeLanche").textContent;
-    const valor = item.querySelector(".precoItem").textContent;
+    //PEGANDO O ITEM CORRETO ENTRE OS CLONES PARA PREECHER OS VALORES CORRETOS E MANDAR PARA O MODAL
+    item = t.target.closest(".itemLanche");
     if(item){
+      //SELECIONEI AS INFORMAÇÕES DO ITEM 
+      const img = item.querySelector(".imgIndividual")?.src;
+      const nome = item.querySelector(".nomeLanche")?.textContent;
+      const valor = item.querySelector(".precoItem")?.textContent;
+
       //PASSEI PARA O MODAL
       const modal = item.querySelector(".itemLancheModal")
       modal.querySelector(".imgModalLanche").src=img;
@@ -44,6 +45,7 @@ fetch("assets/php/config.php")
   
  }
 
+ capturaItem(".itemLanche")
 
 
 

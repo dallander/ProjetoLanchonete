@@ -23,7 +23,9 @@ width: 170px;
 position: absolute;
 top: -20px;
 }
-
+.item{
+    background-color: #000;
+}
 .containerimgCarrinho{
 display: flex;
 align-items: center;
@@ -207,11 +209,11 @@ box-shadow: 1px 1px 2px 1px #000000;
 
 .containerCarrinhoNav {
 position: fixed;
-height: 446px;
+height: 100%;
 width: 400px;
 right: 10px;
 top: 150px;
-background-color: #0b0a0a;   
+background-color: #0b0a0a8f;   
 color: #fff;
 box-shadow: -3px 3px 6px 1px #d7ac01;
 border-top-right-radius: 30px;
@@ -236,6 +238,7 @@ flex-direction: column;
     font-weight: bolder;
     height: 90px;
     border-radius: 3px;
+
 
 }
 
@@ -268,7 +271,7 @@ flex-direction: column;
 
 
 .inputCmodal {
-width: 50px;
+width: 70px;
 display: flex;
 color: #ffd000;
 background-color: transparent;
@@ -459,6 +462,7 @@ height: 130px;
 .btnContainerModal {
 display: flex;
 justify-content: center;
+margin-top: 20px;
 }
 
 .nomeLancheModal {
