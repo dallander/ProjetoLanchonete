@@ -1,0 +1,550 @@
+/* ======================================== */
+/* INÍCIO CONFIGURAÇÃO GERAL DAS TAGS   */
+/* ======================================== */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body,html {
+height: 100%;
+background-color: #151515;
+color: #ffd000;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+footer {
+background-color: #ffd000;
+}
+
+.logo {
+width: 170px;
+position: absolute;
+top: -20px;
+}
+
+.containerimgCarrinho{
+display: flex;
+align-items: center;
+}
+
+.containerMain{
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+min-height: 100vh;
+}
+/* ======================================== */
+/* FIM CONFIGURAÇÃO GERAL DAS TAGS  */
+/* ======================================== */
+
+/* ======================================== */
+/* INÍCIO CONFIGURAÇÃO MENU NAVBAR  */
+/* ======================================== */
+#containerNavTop {
+display: flex;
+justify-content: space-around;
+align-items: center;
+background-color: #ffd000;
+color: #000;
+padding-right: 10px;
+height: 140px;
+
+}
+.item ul, li {
+    list-style: none;
+}
+.containerimgCarrinho{
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+.item{
+    display: flex;
+    padding: 2px;
+    justify-content: space-around;
+    box-shadow: 1px 1px 2px 2px #ffd000;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;  
+    margin-top: 10px;  
+}
+.containerPrecoItemCarrinho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.item img{
+    height:80px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;  
+}
+
+
+.containerCarrinhoMaisMenos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size:20px;
+    font-weight: bolder;
+}
+
+
+
+.menosCarrinho, 
+.maisCarrinho, 
+.precoItemCarrinho{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    width: 60px;
+    user-select: none;
+
+}
+.maisCarrinho,
+.menosCarrinho{
+    background-color: #E6B800; 
+    user-select: none;
+    cursor: pointer;
+    color: #000;
+}
+
+.menosCarrinho {
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;  
+}
+.maisCarrinho{
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;  
+
+}
+
+.menosCarrinho:hover{
+    background-color: #ff0000;
+    color: #fff;
+}
+
+.maisCarrinho:hover{
+    background-color: #ffd000;
+    color: #fff;
+}
+.xCarrinho{
+    color: #ffd000;
+    cursor: pointer;
+    user-select: none;
+    font-size: 21px;
+    font-weight: bolder;
+    position: absolute;
+    right: 15px;
+    top: 0;
+}
+.xCarrinho:hover{
+    color: #ff0000;
+}
+.precoItemCarrinho{
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 1px 1px 1px 1px #ff0000;
+    height: 30px;
+    font-weight: bolder;
+    color: #ffd000;
+}
+
+#qtdCarrinho{
+    width: 50px;
+    border: none;
+    outline: none;
+    user-select: none;
+    background-color: #000;
+    color: #ffd000;
+    font-size: 18px;
+    padding-left: 5px;
+}
+#consultarPedido{
+border: none;
+outline: none;
+height: 30px;
+width: 300px;
+border-top-right-radius: 15px;
+border-bottom-left-radius: 15px;
+padding-left: 15px;
+font-size: 16px;
+box-shadow: 1px 2px 2px 2px #0c0c0c;
+}
+
+#consultarPedido::placeholder{
+padding-left: 3px;
+color: #5c5b5b;
+font-size: 16px;
+}
+
+.consultarPedido label{
+font-weight: bolder;
+font-size: 16px;
+}
+
+.botaoConsultaPedido {
+border: none;
+height: 32px;
+width: 90px;
+border-top-right-radius: 15px;
+border-bottom-left-radius: 15px;
+cursor: pointer;
+background: #E6B800;
+font-weight: bolder;
+font-size: 16px;
+}
+
+.botaoConsultaPedido:hover{
+box-shadow: 1px 1px 2px 1px #000000;
+}
+
+.containerCarrinhoNav {
+position: fixed;
+height: 446px;
+width: 400px;
+right: 10px;
+top: 150px;
+background-color: #0b0a0a;   
+color: #fff;
+box-shadow: -3px 3px 6px 1px #d7ac01;
+border-top-right-radius: 30px;
+border-bottom-left-radius: 30px;
+padding: 18px;
+display: flex;
+justify-content: space-between;
+flex-direction: column;
+}
+.containerCarrinhoNav > :first-child{
+    /*APLICAR DISPLAY NONE AQUI*/
+}
+
+.comprar{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    color: #000;
+    font-size: 20px;
+    font-weight: bolder;
+    height: 90px;
+    border-radius: 3px;
+
+}
+
+
+.valorTotal {
+    height: 46px;
+    padding: 2px;
+    color: #ffd000;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 1px 1px 1px 1px #ff0000;
+    user-select: none;
+}
+.btConfirmaCompra{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 155px;
+    height: 55px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    user-select: none;
+    cursor: pointer;
+    background-color: #E6B800;
+}
+.btConfirmaCompra:hover{
+    background-color: #ffd000;
+}
+
+
+.inputCmodal {
+width: 50px;
+display: flex;
+color: #ffd000;
+background-color: transparent;
+border: none;
+outline: none;
+text-align: center;
+padding-left: 12px;
+user-select: none;
+font-size: 19px;
+}
+/* ======================================== */
+/* FIM CONFIGURAÇÃO MENU NAVBAR */
+/* ======================================== */
+
+/* ======================================== */
+/* INÍCIO CONFIGURAÇÃO SECTION LANCHE   */
+/* ======================================== */
+.sectionLanche {
+display: flex;
+height: 100%;
+flex-wrap: wrap;
+justify-content: center;
+padding: 10px;
+}
+
+.itemLanche {
+width: 350px;
+display: flex;
+justify-content: space-between;
+background-color: #000000;
+padding: 15px;
+border-top-right-radius: 20px;
+border-bottom-left-radius: 20px;
+box-shadow: 4px 5px 4px 1px #E6B800;
+margin-right: 20px;
+margin-bottom: 20px;
+}
+.itemLanche.molde{
+    display: none;
+}
+
+.itemLanche img:not(.containerImgImagemBotao img) {
+border-top-right-radius: 20px;
+border-bottom-left-radius: 20px;
+box-shadow: 4px 5px 4px 1px #E6B800;
+}
+
+.itemLanche:hover {
+box-shadow: 4px 5px 5px 2px #ffd000;
+}
+
+.btnContainer {
+width: 100px;
+}
+
+.infoLanche {
+margin-left: 10px;
+width: 100%;
+display: flex;
+justify-content: center;
+flex-direction: column;
+padding-left: 10px;
+}
+
+.imgBotaoAbrirModal {
+display: flex;
+border-bottom-right-radius: 13px;
+border-top-left-radius: 13px;
+background-color: #E6B800;
+color: black;
+padding: 2px;
+width: 110%;
+margin-top: 10px;
+cursor: pointer;
+user-select: none;
+}
+
+.imgBotaoAbrirModal h4 {
+margin-left: 10px;
+}
+
+.imgBotaoAbrirModal:hover {
+background-color: #ffd000;
+box-shadow: 0px 0px 1px 2px #E6B800;
+}
+
+.imgBotaoAbrirModal img {
+height: 20px;
+}
+
+.containerImgImagemBotao {
+display: flex;
+width: 25px;
+padding: 1px;
+background-color: black;
+border-top-left-radius: 10px;
+}
+/* ======================================== */
+/* FIM CONFIGURAÇÃO SECTION LANCHE  */
+/* ======================================== */
+
+/* ======================================== */
+/* INÍCIO CONFIGURAÇÃO ITEM LANCHE MODAL    */
+/* ======================================== */
+.esconde {
+display: none !important ;
+}
+
+.containerModal.esconderModal {
+display: none;
+}
+
+.containerModal {
+background-color: #000000ad;
+right: 0;
+top: 0;
+left: 0;
+bottom: 0;
+position: fixed;
+display: flex;
+}
+
+.itemLancheModal {
+background-color: #151515fa;
+margin: auto;
+width: 680px;
+height: 350px;
+display: flex;
+justify-content: space-around;
+padding: 10px;
+border-top-left-radius: 50px;
+border-bottom-right-radius: 50px;
+position: relative;
+box-shadow: 0px 3px 10px 1px #E6B800;
+user-select: none;
+}
+
+.itemLancheModal:hover {
+box-shadow: 0px 3px 7px 2px #ffd000;
+}
+
+.fecharModal {
+position: absolute;
+right: 0;
+top: 0;
+margin-right: 10px;
+margin-top: 2px;
+font-size: 30px;
+user-select: none;
+cursor: pointer;
+width: 35px;
+}
+
+.fecharModal:hover {
+color: red;
+}
+
+.imgLancheModal {
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.imgLancheModal img {
+width: 220px;
+height: 220px;
+border-top-right-radius: 30px;
+border-bottom-left-radius: 30px;
+box-shadow: 3px 3px 5px 1px #ffd000;
+}
+
+.infoLancheModal {
+width: 100%;
+height: 350px;
+display: flex;
+justify-content: center;
+flex-direction: column;
+text-align: center;
+align-items: center;
+}
+
+.containerTituloInfoLancheModal {
+display: block;
+height: 130px;
+}
+
+.btnContainerModal {
+display: flex;
+justify-content: center;
+}
+
+.nomeLancheModal {
+font-size: 30px;
+}
+
+.botaoModal{
+background-color: #E6B800;
+border: none;
+border-bottom-right-radius: 15px;
+border-top-left-radius: 15px;
+cursor: pointer;
+font-weight: bolder;
+font-size: 15px;
+}
+
+.botaoModal:hover {
+background-color: #ffd000;
+}
+
+.qtItem {
+height: 80px;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+font-size: 40px;
+font-weight: bolder;
+}
+
+.btnMais, .btnMenos {
+user-select: none;
+width: 90px;
+cursor: pointer;
+background-color: #E6B800;
+color: #000;
+font-weight: bolder;
+font-size: 26px;
+}
+
+.btnMais:hover, .btnMenos:hover {
+background-color: #ffd000;
+}
+
+.btnMais {
+border-bottom-right-radius: 15px;
+border-top-left-radius: 15px;
+margin-left: 5px;
+}
+
+.btnMenos {
+margin-right: 5px;
+border-top-right-radius: 15px;
+border-bottom-left-radius: 15px;
+}
+
+.btnMenos:hover{
+background-color: red;
+}
+
+.containerValorImagemBtnModal input {
+height: 50px;
+width: 240px;
+}
+
+.btnModal {
+display: flex;
+}
+
+.valorIndividualModal{
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+height: 40px;
+width: 100px;
+font-size: 15px;
+box-shadow: 1px 2px 2px 1px red;
+border-top-right-radius: 15px;
+border-bottom-left-radius: 15px; 
+margin-right: 7px;
+}
+
+input.botaoModal {
+width: 160px;
+height: 40px;
+}
+/* ======================================== */
+/* FIM CONFIGURAÇÃO ITEM LANCHE MODAL   */
+/* ======================================== */
