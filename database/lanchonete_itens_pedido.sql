@@ -28,10 +28,10 @@ CREATE TABLE `itens_pedido` (
   `id_lanche` int DEFAULT NULL,
   `quantidade` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_item`),
-  KEY `id_pedido` (`id_pedido`),
-  KEY `id_lanche` (`id_lanche`),
-  CONSTRAINT `itens_pedido_ibfk_1` FOREIGN KEY (`id_pedido`) REFERENCES `pedidos` (`id_pedido`),
-  CONSTRAINT `itens_pedido_ibfk_2` FOREIGN KEY (`id_lanche`) REFERENCES `lanches` (`id_tabela_lanche`)
+  KEY `fk_itens_pedido_pedido` (`id_pedido`),
+  KEY `fk_itens_pedido_lanche` (`id_lanche`),
+  CONSTRAINT `fk_itens_pedido_lanche` FOREIGN KEY (`id_lanche`) REFERENCES `lanches` (`id_tabela_lanche`),
+  CONSTRAINT `fk_itens_pedido_pedido` FOREIGN KEY (`id_pedido`) REFERENCES `pedidos` (`id_pedido`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-17 14:06:04
+-- Dump completed on 2025-07-18 19:21:32

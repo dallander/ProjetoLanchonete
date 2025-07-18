@@ -27,8 +27,8 @@ CREATE TABLE `pedidos` (
   `id_cliente` int DEFAULT NULL,
   `data_pedido` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_pedido`),
-  KEY `id_cliente` (`id_cliente`),
-  CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_tabela_cliente`)
+  KEY `fk_pedidos_cliente` (`id_cliente`),
+  CONSTRAINT `fk_pedidos_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_tabela_cliente`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-17 14:06:04
+-- Dump completed on 2025-07-18 19:21:32

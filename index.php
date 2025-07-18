@@ -44,25 +44,21 @@
 
                 <li class="containerCarrinhoMaisMenos">
                     <div class="menosCarrinho">-</div>
-                    <input type="number" name="qtdCarrinho" id="qtdCarrinho" value="100" readonly>
+                    <input type="number" name="qtdCarrinhonav" class="qtCarrinhonav" value="100" readonly>
                     <div class="maisCarrinho">+</div>
                 </li>
                 
             </ul>
-
             <div class="xCarrinho">X</div>
-            <div class="comprar">
-                <div class="valorTotal">
-                    R$ 100.00
-                </div>
-                <div class="btConfirmaCompra">
-                    Comprar
+                <div class="comprar">
+                    <div class="valorTotal">
+                        R$ 100.00
+                    </div>
+                    <div class="btConfirmaCompra">
+                        Comprar
+                    </div>
                 </div>
             </div>
-        </div>
-
-        
-
     </nav>
 
     <!--FIM CONFIGURAÇÃO DO NAVBAR-->
