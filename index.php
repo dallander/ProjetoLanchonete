@@ -33,7 +33,7 @@
 
         <div class="containerCarrinhoNav esconde">
 
-            <ul class="item">
+            <ul class="item modelo">
                 <li class="containerImagemCarrinho">
                     <img src="assets/images/imgLanche/2.png" alt="imagem carrinho" class="imgItem" >
                 </li>
@@ -46,10 +46,12 @@
                     <div class="menosCarrinho">-</div>
                     <input type="number" name="qtdCarrinhonav" class="qtCarrinhonav" value="100" readonly>
                     <div class="maisCarrinho">+</div>
+                    <div title="Excluir" class="excluirItem">X</div>
                 </li>
                 
             </ul>
-            <div class="xCarrinho">X</div>
+            
+            <div title="Fechar carrinho" class="xCarrinho">X</div>
                 <div class="comprar">
                     <div class="valorTotal">
                         R$ 100.00
@@ -66,7 +68,7 @@
     <!--INÍCIO CONFIGURAÇÃO SECTION LANCHE-->
         <section class="sectionLanche">
             <!--INÍCIO CONFIGURAÇÃO DO ITEM LANCHE-->
-            <div class="itemLanche molde">
+            <div class="itemLanche modelo">
                 <div class="imgLanche">
                     <img src="assets/images/imgLanche/1.png" alt="lanche x" class ="imgIndividual">
                 </div>

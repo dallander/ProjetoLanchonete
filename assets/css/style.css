@@ -26,6 +26,23 @@ top: -20px;
 .containerCarrinhoNav .item{
     display: none;
     background-color: #000;
+    position: relative;
+    
+}
+.excluirItem{
+    position: absolute;
+    top: -5px;
+    left: 3px;
+    font-size: 17px;
+    color: #E6B800;
+    cursor: pointer;
+    font-weight: bolder;
+    margin-right: 2px;
+
+    
+}
+.excluirItem:hover{
+    color: red;
 }
 .containerimgCarrinho{
 display: flex;
@@ -70,8 +87,7 @@ text-align: center;
     padding: 2px;
     justify-content: space-around;
     box-shadow: 1px 1px 2px 2px #ffd000;
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;  
+    border-radius: 3px;
     margin-top: 10px;  
 }
 .containerPrecoItemCarrinho{
@@ -86,6 +102,7 @@ text-align: center;
     height:80px;
     border-top-right-radius: 30px;
     border-bottom-left-radius: 30px;  
+    margin-left:10px;
 }
 
 
@@ -144,8 +161,9 @@ text-align: center;
     font-size: 21px;
     font-weight: bolder;
     position: absolute;
-    right: 15px;
+    right: 5px;
     top: 0;
+
 }
 .xCarrinho:hover{
     color: #ff0000;
@@ -213,22 +231,19 @@ box-shadow: 1px 1px 2px 1px #000000;
 
 .containerCarrinhoNav {
 position: fixed;
-height: 100%;
 width: 450px;
-right: 10px;
-top: 150px;
+right: 5px;
+top: 3px;
+bottom: 3px;
 background-color: #0b0a0a8f;   
 color: #fff;
 box-shadow: -3px 3px 6px 1px #d7ac01;
-border-top-right-radius: 30px;
-border-bottom-left-radius: 30px;
+
 padding: 18px;
 display: flex;
 flex-direction: column;
 }
-.containerCarrinhoNav > :first-child{
-    /*APLICAR DISPLAY NONE AQUI*/
-}
+
 
 .comprar{
     display: flex;
@@ -255,8 +270,9 @@ flex-direction: column;
     color: #ffd000;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    box-shadow: 1px 1px 1px 1px #ff0000;
+    box-shadow: 1px 1px 3px 1px #ff0000;
     user-select: none;
+
 }
 .btConfirmaCompra{
     text-align: center;
@@ -315,10 +331,9 @@ border-bottom-left-radius: 20px;
 box-shadow: 4px 5px 4px 1px #E6B800;
 margin-right: 20px;
 margin-bottom: 20px;
+display: none;
 }
-.itemLanche{
-    display: none;
-}
+
 
 .itemLanche img:not(.containerImgImagemBotao img) {
 border-top-right-radius: 20px;
