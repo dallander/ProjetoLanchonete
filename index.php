@@ -28,7 +28,7 @@
         </div>
 
         <div class="containerimgCarrinho">
-            <img src="assets/images/bt_img/carrinho.png" alt="" id="cartimg">
+            <img src="assets/images/bt_img/carrinho.png" title="Abrir Carrinho" alt="Botao Abrir Carrinho" id="cartimg">
         </div>
 
         <div class="containerCarrinhoNav esconde">

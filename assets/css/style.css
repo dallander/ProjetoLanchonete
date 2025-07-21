@@ -63,6 +63,7 @@ min-height: 100vh;
 /* ======================================== */
 /* INÍCIO CONFIGURAÇÃO MENU NAVBAR  */
 /* ======================================== */
+
 #containerNavTop {
 display: flex;
 justify-content: space-around;
@@ -72,6 +73,11 @@ color: #000;
 padding-right: 10px;
 height: 140px;
 
+}
+#cartimg{
+    display: none;
+    cursor: pointer;
+    
 }
 .item ul, li {
     list-style: none;
@@ -428,8 +434,7 @@ height: 340px;
 display: flex;
 justify-content: space-around;
 padding: 10px;
-border-top-left-radius: 50px;
-border-bottom-right-radius: 50px;
+border-radius: 5px;
 position: relative;
 box-shadow: 0px 3px 10px 1px #E6B800;
 user-select: none;
