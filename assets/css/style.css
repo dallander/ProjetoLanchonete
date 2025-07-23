@@ -129,7 +129,7 @@ text-align: center;
     justify-content: center;
     align-content: center;
     text-align: center;
-    width: 80px;
+    width: 90px;
     user-select: none;
 
 }
@@ -139,6 +139,7 @@ text-align: center;
     user-select: none;
     cursor: pointer;
     color: #000;
+    width: 60px;
 }
 
 .menosCarrinho {
@@ -587,4 +588,98 @@ height: 40px;
 }
 /* ======================================== */
 /* FIM CONFIGURAÇÃO ITEM LANCHE MODAL   */
+/* ======================================== */
+
+/* ======================================== */
+/* INÍCIO CONFIGURAR FORMULÁRIO   */
+/* ======================================== */
+.sectionForm{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000000b2;
+    display: flex;
+    display: none;
+
+}
+.formulario{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: auto;
+    width: 700px;
+    height: 500px;
+    background-color: #161616;
+    border: 5px;
+    padding: 10px;
+}
+
+.formulario input{
+    height: 40px;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: none;
+    outline-color: #ffd000
+}
+
+.formulario button{
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    background-color: #E6B800;
+    font-size: 18px;
+    font-weight: bolder;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+}
+.formulario button:hover{
+    background-color: #ffd000;
+}
+
+.formulario label{
+    margin-bottom: -15px;
+    font-weight: bolder;
+}
+
+/* ======================================== */
+/* FIM CONFIGURAR FORMULÁRIO   */
+/* ======================================== */
+
+/* ======================================== */
+/* INÍCIO DA CONFIGURAÇÁO DO PAGAMENTO   */
+/* ======================================== */
+.pagamentoPix{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    background-color: #0000009f;
+
+}
+.containerImg {
+    background-color: #161616;
+    height: 500px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.pagamentoPix img {
+    background-color: #000;
+    display: block;
+    white-space: 300px;
+    height: 300px;
+}
+/* ======================================== */
+/* FIM DA CONFIGURAÇÁO DO PAGAMENTO   */
 /* ======================================== */

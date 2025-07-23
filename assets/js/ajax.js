@@ -17,6 +17,7 @@ fetch("assets/php/config.php")
         clone.querySelector(".nomeLanche").textContent = `${c.nome_tabela_lanche}`;
         clone.querySelector(".precoItem").textContent = `R$ ${c.preco_tabela_lanche}`;
         clone.setAttribute("data-id",c.id_tabela_lanche);//SETANDO IDENTIFICADO INDIVIDUAL NO ITEM
+        clone.setAttribute("data-preco",c.preco_tabela_lanche)
         //INSERINDO O CLONE NA ÁREA
         Container.appendChild(clone);
         });
@@ -32,6 +33,7 @@ fetch("assets/php/config.php")
     if(item){
       //SELECIONEI AS INFORMAÇÕES DO ITEM 
       const id = item.getAttribute("data-id");//CAPTURANDO IDENTIFICADOR INIDVIDUAL
+      const DataPreco = item.getAttribute("data-preco")//CAPTURA O PREÇO DO ITEM
       const img = item.querySelector(".imgIndividual")?.src;
       const nome = item.querySelector(".nomeLanche")?.textContent;
       const valor = item.querySelector(".precoItem")?.textContent;
@@ -40,6 +42,7 @@ fetch("assets/php/config.php")
       //PASSEI PARA O MODAL
       const modal = item.querySelector(".itemLancheModal");
       modal.setAttribute("data-id",id);//SETANDO IDENTIFICADO INDIVIDUAL NO ITEM
+      modal.setAttribute("data-preco",DataPreco)//SETANDO O DATA PREÇO DO ITEM NO MODAL
       modal.querySelector(".imgModalLanche").src=img;
       modal.querySelector(".nomeLancheModal ").textContent=nome;
       modal.querySelector(".valorIndividualModal").textContent=`${valor}`;

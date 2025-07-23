@@ -10,6 +10,7 @@ function botaoClickado (classe, callback){
            if(botao){callback(botao)};
 
         });
+
 };
 //FUNÇÃO QUE VAI ABRIR O MODAL PARA O CLIENTE
 function abrirModal(botao){
@@ -17,6 +18,11 @@ function abrirModal(botao){
     const modal = item.querySelector(".containerModal");
     modal.classList.remove("esconderModal");
 
+
+    setTimeout(() => {
+         //CHAMA A FUNÇÃO CHECAR CARRINHO
+        checarCarrinho();
+    }, 200);
     console.log("EXECUTOU A FUNÇÃO abrirModal");
 };
 //FUNÇÃO QUE VAI FECHAR O MODAL PARA O
@@ -25,7 +31,10 @@ function fecharModal(botao){
 
     modal.classList.add("esconderModal")
 
-    
+    setTimeout(() => {
+         //CHAMA A FUNÇÃO CHECAR CARRINHO
+        checarCarrinho();
+    }, 200);
     console.log("EXECUTOU A FUNÇÃO fecharModal")
 };
 //FUNÇÃO QUE VAI ALTERAR A QUANTIDADE DO ITEM ESCOLHIDO SOMANDO
@@ -35,6 +44,8 @@ function adicionarItemModal(botao){
     if(input){
         const add = parseInt(input.value,10);
         input.value=add+1;
+        
+
     }
 
     console.log("EXECUTOU A FUNÇÃO adicionar")
@@ -53,6 +64,7 @@ function subtrairItemModal(botao){
     if(input.value >1){
         input.value=subtrai-1;
     }
+
     console.log("EXECUTOU A FUNÇÃO SUBTRAIR DENTRO DO MODAL")
 };
 
@@ -66,6 +78,10 @@ function exluirItemCarrinho(botao){
             item.remove();
         }
     }
+    setTimeout(() => {
+         //CHAMA A FUNÇÃO CHECAR CARRINHO
+        checarCarrinho();
+    }, 200);
 };
 //FUNÇÃO QUE VAI ALTERAR A QUANTIDADE DO ITEM ESCOLHIDO DENTRO DO CARRINHO SUBTRAINDO E VAI EXCLUIR O MESMO CASO SEJA MENOR QUE 1
 function subtrairItemCarrinho(botao){
@@ -79,6 +95,10 @@ function subtrairItemCarrinho(botao){
         }
         
     }
+    setTimeout(() => {
+         //CHAMA A FUNÇÃO CHECAR CARRINHO
+        checarCarrinho();
+    }, 200);
 };
 //FUNÇÃO QUE VAI ALTERAR A QUANTIDADE DO ITEM ESCOLHIDO DENTRO DO CARINHO ADICIONANDO
 function adicaoItemCarrinho(botao){
@@ -88,7 +108,10 @@ function adicaoItemCarrinho(botao){
         const add = parseInt(input.value,10);
         input.value =add+1;
     }
-
+    setTimeout(() => {
+         //CHAMA A FUNÇÃO CHECAR CARRINHO
+        checarCarrinho();
+    }, 200);
 };
 //FUNÇÃO QUE VAI FECHAR O CARRINHO
 function fecharCarrinho(botao){
@@ -96,10 +119,32 @@ function fecharCarrinho(botao){
         const carinho = document.querySelector(".containerCarrinhoNav");
         carinho.classList.add("esconde")
     };
+    setTimeout(() => {
+         //CHAMA A FUNÇÃO CHECAR CARRINHO
+        checarCarrinho();
+    }, 200);
     console.log("EXECUTOU A FUNÇÃO FECHAR CARRINHO")
 };
+//FUNÇÃO QUE VAI FAZER A ALTERAÇÃO DO VALOR DO ITEM INDIVIDUAL NO DOMADO
+function checarModal(classe){
+    
+    const PrecoBase = classe.getAttribute("data-preco");
+    if(classe){
+        const InputItemModal = classe.querySelector(".inputCmodal");
+        const precoItemCliente = classe.querySelector(".valorIndividualModal");
+
+        let value = InputItemModal.value;
+        const calc = value * PrecoBase;
+        const calcFortmatado = `R$ ${calc.toFixed(2).replace(".",",")}`
+        precoItemCliente.textContent=calcFortmatado;
+
+        
+    }
+    console.log("eexecutou checar Modal")
+}
 //FUNÇÃO QUE VAI ADICIONAR O ITEM AO CARRINHO ATRAVÉS DO BOTÃO ADICIONAR AO CARRINHO E CHAMA A FUNÇÃO CHECAR CARRINHO
-const carrinho= [];
+//>>>>>>>>>>>>>CONCERTAR A PARTE QUE TEM QUE REMOVER O ITEM DO ARRAY DO CARRINHO<<<<<<<<<<<<<<<<<<<<
+let carrinhoArray= [];
 function colocarItemNoCarrinho(botao){
     const containerModal = botao.closest(".containerModal");
     
@@ -109,14 +154,16 @@ function colocarItemNoCarrinho(botao){
     };
     //ITEM DO MODAL
     const itemModal = containerModal.querySelector(".itemLancheModal")
-    
+   
     
     //ID DO ITEM DENTRO DO MODAL
     const id = itemModal.getAttribute("data-id")
+    //PREÇO DO ITEM PARA USAR COMO BASE NO CALCULO
+    const PrecoBase = itemModal.getAttribute("data-preco")
     
         //CHECA PARA VER SE O ITEM JA ESTÁ DENTRO DO CARRINHO
-        if(!carrinho.includes(id)){
-                carrinho.push(id)
+        if(!carrinhoArray.includes(id)){
+                carrinhoArray.push(id)
             //SE O ITEM NÃO ESTIVER DENTRO DO CARRINHO ELE VAI ADICIONAR ELE
             if(itemModal){
             //CAPTURANDO O ID INDIVIDUAL DO ITEM
@@ -124,52 +171,55 @@ function colocarItemNoCarrinho(botao){
                 const item = document.querySelector(".item.modelo")
                 const containerCarrinho=document.querySelector(".containerCarrinhoNav");
                 const img = itemModal.querySelector(".imgModalLanche").src;//INFORMAÇÕES DO MODAL
-                const preco = itemModal.querySelector(".valorIndividualModal").textContent;
+                    
                 const qtd = itemModal.querySelector(".inputCmodal").value;
-                        
-                //CLONE
-                const clone = item.cloneNode(true);
-                clone.classList.remove("modelo")//REMOVE A CLASSE modelo PARA EU PODER DIFERENCIAR DO MOLDE E DOS ITENS CLONADOS
-                clone.style.display="flex";
-                        //ATRIBUINDO AS INFORMAÇÕES AO CLONE QUE VAI PARA O CARRINHO
-                clone.querySelector(".imgItem").src=img;
-                clone.querySelector(".precoItemCarrinho").textContent=preco;
-                clone.querySelector(".qtCarrinhonav").value=qtd;
-                clone.setAttribute("data-id",id);//SETANDO O ID INDIVIDUAL DO ITEM
-                containerCarrinho.appendChild(clone);
+                    
+                setTimeout(() => {
+                    //CLONE
+                    const preco = itemModal.querySelector(".valorIndividualModal").textContent;
+                    const clone = item.cloneNode(true);
+                    clone.classList.remove("modelo")//REMOVE A CLASSE modelo PARA EU PODER DIFERENCIAR DO MOLDE E DOS ITENS CLONADOS
+                    clone.style.display="flex";
+                    //ATRIBUINDO AS INFORMAÇÕES AO CLONE QUE VAI PARA O CARRINHO
+                    clone.querySelector(".imgItem").src=img;
+                    clone.querySelector(".precoItemCarrinho").textContent=preco;
+                    clone.querySelector(".qtCarrinhonav").value=qtd;
+                    clone.setAttribute("data-id",id);//SETANDO O ID INDIVIDUAL DO ITEM
+                    clone.setAttribute("data-preco",PrecoBase)
+                    containerCarrinho.appendChild(clone);
+
+                    //CHAMA A FUNÇÃO CHECAR CARRINHO
+                    checarCarrinho();
+                }, 20);
+                
 
             };  
-        }else{
-            console.log("O item ja existe no carrinho")
+        }
+        //PEGA O VALOR DO INPUT MODAL E ATRIBUI AO ITEM DO CARRINHO/CASO O CLIENTE ESOLHA O MESMO ITEM ELE NÃO FIQUE DUPLICADO DENTRO DO CARRINHO E ADICIONA A QUANTIDADE QUE O USUARIO QUER. 
+        else{
+            const itens= document.querySelectorAll(".containerCarrinhoNav .item:not(.modelo)")
+            itens.forEach(item => {
+                if(id == item.getAttribute("data-id")){
+
+                    const inputCarrinho = item.querySelector(".qtCarrinhonav")//INPUT DO ITEM DO CARRINHO
+                    const inputModal = itemModal.querySelector(".inputCmodal");//INPUT DO ITEM NO MODAL
+                    const value1 = parseInt(inputModal.value,10) // CONVERTE O VALOR DO INPUT DO MODAL PARA INTEIRO
+                    const value2 = parseInt(inputCarrinho.value ,10)// CONVERTE O VALOR DO INPUT DO ITEM CARRINHO PARA INTEIRO
+                    const soma = parseInt(value1+value2,10)//CONVERTE A SOMA DO 2 INPUTS PARA INTEIRO
+                    
+                    inputCarrinho.value= soma;//ATRIBUI O VALOR AO ITEM NO CARRINHO
+
+                }
+        
+                
+            });
+
         }
     console.log("EXECUTOU A FUNÇÃO COLOCAR NO carrinho");
     //CHAMA A FUNÇÃO PARA FECHAR O MODAL DEPOIS DE ABRIR O CARRINHO
     fecharModal(botao);
-    //CHAMA A FUNÇÃO CHECAR CARRINHO
-    checarCarrinho(".containerCarrinhoNav .item:not(.modelo)");
+
     
-};
-//FUNÇÃO QUE FICA VERIFICANDO SE O CARRINHO ESTÁ VAZIO
-function checarCarrinho(classe){
-    const botaoCarrinho = document.querySelector("#cartimg")
-    
-    document.addEventListener("click",()=>{
-        const item =document.querySelectorAll(classe)
-        //FECHA O CARRINHO SE ESTIVER VAZIO
-        if(item.length ==0){
-            const carrinho = document.querySelector(".containerCarrinhoNav");
-            
-            carrinho.classList.add("esconde")
-            
-            //FAZER BOTÃO CARRINHO SUMIR
-            botaoCarrinho.style.display="none";
-        };
-        if(item.length>=1){
-            //FAZER BOTÃO CARRINHO APARECER
-            botaoCarrinho.style.display="flex";
-        }
-});
-    console.log("EXECUTOU A FUNÇÃO checar carinho")
 };
 
 //FUNÇÃO QUE VAI HABILITAR O BOTÃO DO CARINHO
@@ -183,6 +233,30 @@ function habilitarBotaoCarrinho(botao){
     console.log("EXECUTOU A FUNÇÃO HABILITAR BOTÃO CARRINHO")
     
 }   
+
+
+
+
+
+///////////////////////////////////TERMINAR AMANHÃ
+
+function checarCarrinho(){
+    const itens = document.querySelectorAll(".containerCarrinhoNav .item:not(.modelo)")
+    const carrinho = document.querySelector(".containerCarrinhoNav")
+    const botaoCarrinho = document.querySelector("#cartimg")
+    if(itens.length >=1){
+        botaoCarrinho.style.display="flex"
+
+        
+    }
+    if(itens.length ==0){
+        botaoCarrinho.style.display="none"
+        carrinho.classList.add("esconde")
+       
+    }
+    console.log("checou carrinho")
+}
+
 
 
 
@@ -206,8 +280,13 @@ botaoClickado(".maisCarrinho",adicaoItemCarrinho);
 botaoClickado(".xCarrinho",fecharCarrinho);
 //CHAMA A FUNÇÃO DO BOTÃO DE CARRINHO PARA QUE ELE ESCONDA O CARRINHO
 botaoClickado("#cartimg",habilitarBotaoCarrinho)
+//CHAMA A FUNÇÃO QUE VAI FAZER A ALTERAÇÃO DO VALOR DO ITEM INDIVIDUAL NO DOMADO
+botaoClickado(".itemLancheModal",checarModal)
 //CHAMA A FUNÇÃO QUE VAI LIMPAR O CAMPO DE INPUT DO MODAL
 botaoClickado(".botaoModal",limparValueModal)
-//CHAMA A FUNÇÃO QUE VAI VERIFICAR O CARRINHO
-checarCarrinho(".containerCarrinhoNav .item:not(.modelo)");
+//CHAMA A FUNÇÃO CEHCAR CARRINHO
+
+
+
+
 

@@ -57,7 +57,7 @@
                         R$ 100.00
                     </div>
                     <div class="btConfirmaCompra">
-                        Comprar
+                        Pagar
                     </div>
                 </div>
             </div>
@@ -136,13 +136,31 @@
 
             
             <!--FIM CONFIGURAÇÃO DO ITEM LANCHE-->
-
- 
-            
         </section>
         <!--FIM CONFIGURAÇÃO SECTION LANCHE-->
     </main>
+    <section class="sectionForm">
+        <form action="" class="formulario">
+            <label for="">Nome:</label>
+            <input type="text" name="nome" id="nome" placeholder="Digite seu nome">
+            <label for="">Celular:</label>
+            <input type="text" name="celular" id="celular" placeholder="21 123456789">
+            <label for="">Endereço:</label>
+            <input type="text" name="endereco" id="endereco" placeholder="Digite seu Endereço">
+            <label for="">Número da casa:</label>
+            <input type="text" name="numero" id="numero" placeholder="Digite o número da sua casa">
+            <label for="">Bairro:</label>
+            <input type="text" name="bairro" id="bairro" placeholder="Digite seu Bairro">
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
 
+    <section class="pagamentoPix">
+        <h2>Pagamento via Pix</h2>
+        <div class="containerImg">
+            <img src="assets/images/pagamento/pix.jpg" alt="img">
+        </div>
+    </section>
 
     <script src="assets/js/ajax.js"></script>
     <script src="assets/js/eventos.js"></script>
