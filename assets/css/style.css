@@ -445,7 +445,7 @@ user-select: none;
 box-shadow: 0px 3px 7px 2px #ffd000;
 }
 
-.fecharModal {
+.fecharModal,.fecharForm {
 position: absolute;
 right: 0;
 top: 0;
@@ -614,8 +614,13 @@ height: 40px;
     background-color: #161616;
     border: 5px;
     padding: 10px;
+    position: relative;
 }
-
+.fecharForm {
+    font-size: 20px;
+    margin-right: 0;
+    font-weight: bolder;
+}
 .formulario input{
     height: 40px;
     padding-left: 5px;

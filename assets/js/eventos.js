@@ -326,6 +326,22 @@ function fecharCarrinho(botao){
     
     console.log("EXECUTOU A FUNÇÃO FECHAR CARRINHO")
 };
+//FUNÇÃO QUE VAI ABRIR O FORMULÁRIO PARA O CLIENTE DIGITAR ENDEREÇO, NUMÉRIO ETC... E FECHAR O CARRINHO
+function AbrirFormulario(botao){
+    const formulario = document.querySelector(".sectionForm")
+    if(botao){
+        formulario.style.display="flex";
+    }       
+    fecharCarrinho(".xCarrinho")
+}
+
+//FUNÇÃO QUE VAI FECHAR 
+function fecharFormulario(botao){
+    const formulario = document.querySelector(".sectionForm")
+    if(botao){
+        formulario.style.display="none"
+    }
+}
 
 //CHAMA A FUNÇAO ABRIR MODAL
 botaoClickado(".imgBotaoAbrirModal",abrirModal);
@@ -351,9 +367,8 @@ botaoClickado("#cartimg",habilitarBotaoCarrinho)
 botaoClickado(".itemLancheModal",checarModal)
 //CHAMA A FUNÇÃO QUE VAI LIMPAR O CAMPO DE INPUT DO MODAL
 botaoClickado(".botaoModal",limparValueModal)
-
-
-
-
-
+//CHAMA A FUNÇAO ABRIR FORMUÁRIO
+botaoClickado(".btConfirmaCompra",AbrirFormulario)
+//CHAMA A FUNÇÃO QUE VAI ABRIR O FORMULÁRIO PARA O CLIENTE DIGITAR ENDEREÇO, NUMÉRIO ETC... E FECHAR O CARRINHO
+botaoClickado(".fecharForm ",fecharFormulario)
 

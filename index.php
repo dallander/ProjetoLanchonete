@@ -57,7 +57,7 @@
                         R$ 100.00
                     </div>
                     <div class="btConfirmaCompra">
-                        Pagar
+                        Concluir Pedido
                     </div>
                 </div>
             </div>
@@ -141,16 +141,17 @@
     </main>
     <section class="sectionForm">
         <form action="" class="formulario">
+            <div class="fecharForm ">X</div>
             <label for="">Nome:</label>
-            <input type="text" name="nome" id="nome" placeholder="Digite seu nome">
+            <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required>
             <label for="">Celular:</label>
-            <input type="text" name="celular" id="celular" placeholder="21 123456789">
+            <input type="number" name="celular" id="celular" placeholder="21 123456789" required>
             <label for="">Endereço:</label>
-            <input type="text" name="endereco" id="endereco" placeholder="Digite seu Endereço">
+            <input type="text" name="endereco" id="endereco" placeholder="Digite seu Endereço" required>
             <label for="">Número da casa:</label>
-            <input type="text" name="numero" id="numero" placeholder="Digite o número da sua casa">
+            <input type="number" name="numero" id="numero" placeholder="Digite o número da sua casa" required>
             <label for="">Bairro:</label>
-            <input type="text" name="bairro" id="bairro" placeholder="Digite seu Bairro">
+            <input type="text" name="bairro" id="bairro" placeholder="Digite seu Bairro" required>
             <button type="submit">Enviar</button>
         </form>
     </section>
