@@ -18,11 +18,6 @@ function abrirModal(botao){
     const modal = item.querySelector(".containerModal");
     modal.classList.remove("esconderModal");
 
-
-    setTimeout(() => {
-         //CHAMA A FUNÇÃO CHECAR CARRINHO
-        checarCarrinho();
-    }, 200);
     console.log("EXECUTOU A FUNÇÃO abrirModal");
 };
 //FUNÇÃO QUE VAI FECHAR O MODAL PARA O
@@ -31,10 +26,6 @@ function fecharModal(botao){
 
     modal.classList.add("esconderModal")
 
-    setTimeout(() => {
-         //CHAMA A FUNÇÃO CHECAR CARRINHO
-        checarCarrinho();
-    }, 200);
     console.log("EXECUTOU A FUNÇÃO fecharModal")
 };
 //FUNÇÃO QUE VAI ALTERAR A QUANTIDADE DO ITEM ESCOLHIDO SOMANDO
@@ -81,6 +72,7 @@ function exluirItemCarrinho(botao){
     setTimeout(() => {
          //CHAMA A FUNÇÃO CHECAR CARRINHO
         checarCarrinho();
+        calcularTotal();
     }, 200);
 };
 //FUNÇÃO QUE VAI ALTERAR A QUANTIDADE DO ITEM ESCOLHIDO DENTRO DO CARRINHO SUBTRAINDO E VAI EXCLUIR O MESMO CASO SEJA MENOR QUE 1
@@ -107,6 +99,8 @@ function subtrairItemCarrinho(botao){
     setTimeout(() => {
          //CHAMA A FUNÇÃO CHECAR CARRINHO
         checarCarrinho();
+        calcularTotal();
+        
     }, 200);
 };
 //FUNÇÃO QUE VAI ALTERAR A QUANTIDADE DO ITEM ESCOLHIDO DENTRO DO CARINHO ADICIONANDO
@@ -129,24 +123,11 @@ function adicaoItemCarrinho(botao){
             setTimeout(() => {
          //CHAMA A FUNÇÃO CHECAR CARRINHO
                 checarCarrinho();
+                calcularTotal();
             }, 200);
     };
 }
-
-
     
-//FUNÇÃO QUE VAI FECHAR O CARRINHO
-function fecharCarrinho(botao){
-    if(botao){
-        const carinho = document.querySelector(".containerCarrinhoNav");
-        carinho.classList.add("esconde")
-    };
-    setTimeout(() => {
-         //CHAMA A FUNÇÃO CHECAR CARRINHO
-        checarCarrinho();
-    }, 200);
-    console.log("EXECUTOU A FUNÇÃO FECHAR CARRINHO")
-};
 //FUNÇÃO QUE VAI FAZER A ALTERAÇÃO DO VALOR DO ITEM INDIVIDUAL NO DOMADO
 function checarModal(classe){
     
@@ -184,7 +165,7 @@ function colocarItemNoCarrinho(botao){
     
         //CHECA PARA VER SE O ITEM JA ESTÁ DENTRO DO CARRINHO
         if(!carrinhoArray.includes(id)){
-                carrinhoArray.push(Number(id))
+                carrinhoArray.push(id)
             //SE O ITEM NÃO ESTIVER DENTRO DO CARRINHO ELE VAI ADICIONAR ELE
             if(itemModal){
             //CAPTURANDO O ID INDIVIDUAL DO ITEM
@@ -211,6 +192,7 @@ function colocarItemNoCarrinho(botao){
 
                     //CHAMA A FUNÇÃO CHECAR CARRINHO
                     checarCarrinho();
+                    calcularTotal();
                 }, 20);
                 
 
@@ -261,6 +243,7 @@ function habilitarBotaoCarrinho(botao){
 }   
 
 //FUNÇÃO QUE VAI VERIFICAR SE O CARRINHO TEM ALGUM ITEM DENTRO
+
 function checarCarrinho(){
     const itens = document.querySelectorAll(".containerCarrinhoNav .item:not(.modelo)")
     const carrinho = document.querySelector(".containerCarrinhoNav")
@@ -275,36 +258,74 @@ function checarCarrinho(){
         carrinho.classList.add("esconde")
        
     }
-   
+
+
     //BLOCO QUE REMOVE O ITEM DO ARRAY CARRINHO PARA PERMITIR INSERIR UM ITEM DEPOIS DELE TER SIDO EXCLUIDO
-    for(let c =0; c<carrinhoArray.length; c++){
-        let existe = false
+    for(let c =0; c < carrinhoArray.length; c++){
+        let existe = false;
         
-        for(let item =0; item < itens.length;item++){
-            let dataId =Number(itens[item].getAttribute("data-id"));
-            
-            if(dataId == carrinhoArray[c]){
-                existe = true
-                console.log(" igual",dataId)
+        for(let item =0; item < itens.length; item++){
+            let dataId =itens[item].getAttribute("data-id");
+
+            if(carrinhoArray[c]  == dataId){
+                existe = true;
                 break;
                 
             }
-            
+
         }
         if(!existe){
-            carrinhoArray.splice(c,1)
+            carrinhoArray.splice(c,1);
+            c--;
              
         }
         
         
     }
     
-    console.log("checou carrinho")
-     console.log(carrinhoArray)
+    console.log("checou carrinho");
+    
 }
 
+//FUNÇÃO QUE VAI CALCULAR O VALOR TOTAL DO CARRINHO
+let precoItensCarrinho= [];
+let soma = 0;
 
+function calcularTotal (){
+    const itens = document.querySelectorAll(".containerCarrinhoNav .item:not(.modelo)");
+    const precoEmtexto = document.querySelector(".valorTotal")
+    
+    itens.forEach(item => {
+        let preco = item.querySelector(".precoItemCarrinho").textContent;
+        let precoFormatado = preco.replace("R$", "",).replace(",",".").trim();
+        let precConvertido = parseFloat(precoFormatado)
+        precoItensCarrinho.push(precConvertido).toFixed(2);
+    });
+    for(let i =0; i < precoItensCarrinho.length; i++){
+        soma +=precoItensCarrinho[i]
+        precoEmtexto.textContent=`R$ ${soma.toFixed(2).replace(".",",")}`
+    }
+    
+    precoItensCarrinho.splice(0,precoItensCarrinho.length)
+    soma=0
 
+    console.log("EXECUTOU A FUNÇÃO CALCULAR TOTAL")
+}
+
+//FUNÇÃO QUE VAI FECHAR O CARRINHO
+function fecharCarrinho(botao){
+    if(botao){
+        const carinho = document.querySelector(".containerCarrinhoNav");
+        carinho.classList.add("esconde")
+    };
+    setTimeout(() => {
+         //CHAMA A FUNÇÃO CHECAR CARRINHO
+        checarCarrinho();
+        calcularTotal();
+    }, 200);
+    
+    console.log("EXECUTOU A FUNÇÃO FECHAR CARRINHO")
+};
 
 //CHAMA A FUNÇAO ABRIR MODAL
 botaoClickado(".imgBotaoAbrirModal",abrirModal);
@@ -330,7 +351,7 @@ botaoClickado("#cartimg",habilitarBotaoCarrinho)
 botaoClickado(".itemLancheModal",checarModal)
 //CHAMA A FUNÇÃO QUE VAI LIMPAR O CAMPO DE INPUT DO MODAL
 botaoClickado(".botaoModal",limparValueModal)
-//CHAMA A FUNÇÃO CEHCAR CARRINHO
+
 
 
 
