@@ -17,14 +17,27 @@ function abrirModal(botao){
     const item = botao.closest(".itemLanche");
     const modal = item.querySelector(".containerModal");
     modal.classList.remove("esconderModal");
+    const itemLancheModal=modal.querySelector(".itemLancheModal")
+
+    setTimeout(() => {
+        itemLancheModal.classList.add("ativo")
+    },10);
 
     console.log("EXECUTOU A FUNÇÃO abrirModal");
 };
 //FUNÇÃO QUE VAI FECHAR O MODAL PARA O
 function fecharModal(botao){
     const modal = botao.closest(".containerModal");
+    const itemLancheModal=modal.querySelector(".itemLancheModal")
+    let input = itemLancheModal.querySelector(".inputCmodal")
+   
+    itemLancheModal.classList.remove("ativo")
+    setTimeout(() => {
+         modal.classList.add("esconderModal")
+          input.value=1;
+    }, 200);
 
-    modal.classList.add("esconderModal")
+   
 
     console.log("EXECUTOU A FUNÇÃO fecharModal")
 };
