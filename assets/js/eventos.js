@@ -35,10 +35,13 @@ function fecharModal(botao){
     itemLancheModal.classList.remove("ativo")
     modal.classList.remove("ativo")
     setTimeout(() => {
-         modal.classList.add("esconderModal")
-          input.value=1;
+        modal.classList.add("esconderModal")
+        input.value=1;
+        console.log("APAGOU INPUT")
     }, 200);
-
+   
+    
+    
    
 
     console.log("EXECUTOU A FUNÇÃO fecharModal")
@@ -241,11 +244,12 @@ function colocarItemNoCarrinho(botao){
         }
     console.log("EXECUTOU A FUNÇÃO COLOCAR NO carrinho");
     //CHAMA A FUNÇÃO PARA FECHAR O MODAL DEPOIS DE ABRIR O CARRINHO
-    fecharModal(botao);
+    setTimeout(() => {
+        fecharModal(botao);
+    }, 50);
 
     
 };
-
 //FUNÇÃO QUE VAI HABILITAR O BOTÃO DO CARINHO
 function habilitarBotaoCarrinho(botao){
     const carrinho = document.querySelector(".containerCarrinhoNav");
@@ -253,29 +257,39 @@ function habilitarBotaoCarrinho(botao){
         carrinho.classList.remove("esconde")
         setTimeout(() => {
             carrinho.classList.add("ativo")
+            checarCarrinho()
         }, 20);
     }
     
     console.log("EXECUTOU A FUNÇÃO HABILITAR BOTÃO CARRINHO")
     
 };
-
-//FUNÇÃO QUE VAI VERIFICAR SE O CARRINHO TEM ALGUM ITEM DENTRO
-
+//FUNÇÃO QUE VAI VERIFICAR SE O CARRINHO TEM ALGUM ITEM DENTRO E VAI ABRIR O CARRINHO
 function checarCarrinho(){
     const itens = document.querySelectorAll(".containerCarrinhoNav .item:not(.modelo)")
     const carrinho = document.querySelector(".containerCarrinhoNav")
     const botaoCarrinho = document.querySelector("#cartimg")
+    const comprar = document.querySelector(".comprar")
     if(itens.length >=1){
-        botaoCarrinho.style.display="flex"
-
+        botaoCarrinho.style.display="flex";
+        
+        
         
     }
+    if(itens.length >=1 && carrinho.classList.contains("ativo")){
+        comprar.style.display="flex";
+        comprar.classList.add("ativo")
+    }
     if(itens.length ==0){
-        botaoCarrinho.style.display="none"
-        carrinho.classList.add("esconde")
+        botaoCarrinho.style.display="none";
+        carrinho.classList.add("esconde");
+
+        comprar.classList.remove("ativo")
+        comprar.style.display="none"
        
     }
+
+
 
 
     //BLOCO QUE REMOVE O ITEM DO ARRAY CARRINHO PARA PERMITIR INSERIR UM ITEM DEPOIS DELE TER SIDO EXCLUIDO
@@ -304,11 +318,9 @@ function checarCarrinho(){
     console.log("checou carrinho");
     
 };
-
 //FUNÇÃO QUE VAI CALCULAR O VALOR TOTAL DO CARRINHO
 let precoItensCarrinho= [];
 let soma = 0;
-
 function calcularTotal (){
     const itens = document.querySelectorAll(".containerCarrinhoNav .item:not(.modelo)");
     const precoEmtexto = document.querySelector(".valorTotal")
@@ -326,16 +338,18 @@ function calcularTotal (){
     
     precoItensCarrinho.splice(0,precoItensCarrinho.length)
     soma=0
-
+    
+    
     console.log("EXECUTOU A FUNÇÃO CALCULAR TOTAL")
 };
-
 //FUNÇÃO QUE VAI FECHAR O CARRINHO
 function fecharCarrinho(botao){
     const carinho = document.querySelector(".containerCarrinhoNav");
+    const comprar = document.querySelector(".comprar")
     if(botao){
         
         carinho.classList.remove("ativo")
+        comprar.style.display="none";
         setTimeout(() => {
          //CHAMA A FUNÇÃO CHECAR CARRINHO
         carinho.classList.add("esconde")
@@ -361,7 +375,6 @@ function AbrirFormulario(botao){
     }, 30);
     fecharCarrinho(".xCarrinho")
 };
-
 //FUNÇÃO QUE VAI FECHAR 
 function fecharFormulario(botao){
     const formulario = document.querySelector(".sectionForm")

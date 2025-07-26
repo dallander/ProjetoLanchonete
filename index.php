@@ -50,18 +50,21 @@
                 </li>
                 
             </ul>
-            
+
             <div title="Fechar carrinho" class="xCarrinho">X</div>
-                <div class="comprar">
-                    <div class="valorTotal">
-                        R$ 100.00
-                    </div>
-                    <div class="btConfirmaCompra">
-                        Concluir Pedido
-                    </div>
-                </div>
-            </div>
     </nav>
+
+    
+    <div class="comprar">
+            <div class="valorTotal">
+                R$ 100.00
+            </div>
+            <div class="btConfirmaCompra">
+                Concluir Pedido
+            </div>
+        </div>
+    </div>
+
 
     <!--FIM CONFIGURAÇÃO DO NAVBAR-->
     <main class="containerMain">

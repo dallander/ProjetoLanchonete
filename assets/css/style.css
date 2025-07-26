@@ -23,12 +23,15 @@ width: 170px;
 position: absolute;
 top: -20px;
 }
+
 .containerCarrinhoNav .item{
     display: none;
     background-color: #000;
     position: relative;
     
+    
 }
+
 .excluirItem{
     position: absolute;
     top: -5px;
@@ -238,10 +241,10 @@ box-shadow: 1px 1px 2px 1px #000000;
 
 .containerCarrinhoNav {
 position: fixed;
+bottom: 0;
+right: 0;
 width: 450px;
-right: 5px;
-top: 3px;
-bottom: 3px;
+height: calc(100%);
 background-color: #0b0a0a8f;   
 color: #fff;
 box-shadow: -3px 3px 6px 1px #d7ac01;
@@ -252,6 +255,8 @@ flex-direction: column;
 opacity: 0;
 transform: scale(0.4);
 transition: all 0.3s ease;
+overflow-y: auto;
+padding-bottom: 100px;
 }
 
 
@@ -265,9 +270,16 @@ transition: all 0.3s ease;
     font-weight: bolder;
     height: 90px;
     border-radius: 3px;
+    background-color: #000;
+    width: 450px;
     position: fixed;
+    right: 0;
     bottom: 0;
-    
+    display: none;
+
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3 ease;
 }
 .comprar div{
     margin: 10px;
