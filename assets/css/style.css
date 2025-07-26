@@ -245,10 +245,13 @@ bottom: 3px;
 background-color: #0b0a0a8f;   
 color: #fff;
 box-shadow: -3px 3px 6px 1px #d7ac01;
-
 padding: 18px;
 display: flex;
 flex-direction: column;
+
+opacity: 0;
+transform: scale(0.4);
+transition: all 0.3s ease;
 }
 
 
@@ -294,6 +297,8 @@ flex-direction: column;
     cursor: pointer;
     background-color: #E6B800;
     width: 240px;
+
+    
 }
 .btConfirmaCompra:hover{
     background-color: #ffd000;
@@ -425,6 +430,7 @@ left: 0;
 bottom: 0;
 position: fixed;
 display: flex;
+
 }
 
 .itemLancheModal {
@@ -440,13 +446,10 @@ position: relative;
 box-shadow: 0px 3px 10px 1px #E6B800;
 user-select: none;
 opacity: 0;
-transform: scale(0.4);
+transform: scale(0.7);
 transition: all 0.3s ease;
 }
-.ativo{
-    opacity: 1;
-    transform: scale(1);
-}
+
 
 
 .itemLancheModal:hover {
@@ -608,9 +611,8 @@ height: 40px;
     left: 0;
     right: 0;
     background-color: #000000b2;
-    display: flex;
-    display: none;
 
+    display: flex;
 }
 .formulario{
     display: flex;
@@ -623,6 +625,9 @@ height: 40px;
     border: 5px;
     padding: 10px;
     position: relative;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
 }
 .fecharForm {
     font-size: 20px;
@@ -635,6 +640,7 @@ height: 40px;
     border-radius: 5px;
     border: none;
     outline-color: #ffd000
+    
 }
 
 .formulario button{
@@ -656,7 +662,10 @@ height: 40px;
     margin-bottom: -15px;
     font-weight: bolder;
 }
-
+.ativo{
+    opacity: 1;
+    transform: scale(1);
+}
 /* ======================================== */
 /* FIM CONFIGURAR FORMULÁRIO   */
 /* ======================================== */

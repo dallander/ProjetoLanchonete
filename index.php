@@ -139,7 +139,7 @@
         </section>
         <!--FIM CONFIGURAÇÃO SECTION LANCHE-->
     </main>
-    <section class="sectionForm">
+    <section class="sectionForm esconde">
         <form action="" class="formulario">
             <div class="fecharForm ">X</div>
             <label for="">Nome:</label>

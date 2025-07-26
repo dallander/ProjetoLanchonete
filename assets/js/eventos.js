@@ -21,6 +21,7 @@ function abrirModal(botao){
 
     setTimeout(() => {
         itemLancheModal.classList.add("ativo")
+        
     },10);
 
     console.log("EXECUTOU A FUNÇÃO abrirModal");
@@ -32,6 +33,7 @@ function fecharModal(botao){
     let input = itemLancheModal.querySelector(".inputCmodal")
    
     itemLancheModal.classList.remove("ativo")
+    modal.classList.remove("ativo")
     setTimeout(() => {
          modal.classList.add("esconderModal")
           input.value=1;
@@ -71,7 +73,6 @@ function subtrairItemModal(botao){
 
     console.log("EXECUTOU A FUNÇÃO SUBTRAIR DENTRO DO MODAL")
 };
-
 //FUNÇÃO QUE VAI EXLUIR O ITEM DO CARRINHO DE UMA VEZ APERTANDO NO X DO ITEM
 function exluirItemCarrinho(botao){
     if(botao){
@@ -139,8 +140,7 @@ function adicaoItemCarrinho(botao){
                 calcularTotal();
             }, 200);
     };
-}
-    
+};
 //FUNÇÃO QUE VAI FAZER A ALTERAÇÃO DO VALOR DO ITEM INDIVIDUAL NO DOMADO
 function checarModal(classe){
     
@@ -157,7 +157,7 @@ function checarModal(classe){
         
     }
     console.log("eexecutou checar Modal")
-}
+};
 //FUNÇÃO QUE VAI ADICIONAR O ITEM AO CARRINHO ATRAVÉS DO BOTÃO ADICIONAR AO CARRINHO E CHAMA A FUNÇÃO CHECAR CARRINHO
 let carrinhoArray= [];
 function colocarItemNoCarrinho(botao){
@@ -165,7 +165,10 @@ function colocarItemNoCarrinho(botao){
     
     if(containerModal){
         const carrinho = document.querySelector(".containerCarrinhoNav");
-        carrinho.classList.remove("esconde");
+        carrinho.classList.add("ativo")
+        setTimeout(() => {
+            carrinho.classList.remove("esconde");
+        }, 210);
     };
     //ITEM DO MODAL
     const itemModal = containerModal.querySelector(".itemLancheModal")
@@ -248,12 +251,14 @@ function habilitarBotaoCarrinho(botao){
     const carrinho = document.querySelector(".containerCarrinhoNav");
     if(botao){
         carrinho.classList.remove("esconde")
-
+        setTimeout(() => {
+            carrinho.classList.add("ativo")
+        }, 20);
     }
     
     console.log("EXECUTOU A FUNÇÃO HABILITAR BOTÃO CARRINHO")
     
-}   
+};
 
 //FUNÇÃO QUE VAI VERIFICAR SE O CARRINHO TEM ALGUM ITEM DENTRO
 
@@ -298,7 +303,7 @@ function checarCarrinho(){
     
     console.log("checou carrinho");
     
-}
+};
 
 //FUNÇÃO QUE VAI CALCULAR O VALOR TOTAL DO CARRINHO
 let precoItensCarrinho= [];
@@ -323,38 +328,54 @@ function calcularTotal (){
     soma=0
 
     console.log("EXECUTOU A FUNÇÃO CALCULAR TOTAL")
-}
+};
 
 //FUNÇÃO QUE VAI FECHAR O CARRINHO
 function fecharCarrinho(botao){
+    const carinho = document.querySelector(".containerCarrinhoNav");
     if(botao){
-        const carinho = document.querySelector(".containerCarrinhoNav");
-        carinho.classList.add("esconde")
-    };
-    setTimeout(() => {
+        
+        carinho.classList.remove("ativo")
+        setTimeout(() => {
          //CHAMA A FUNÇÃO CHECAR CARRINHO
+        carinho.classList.add("esconde")
         checarCarrinho();
         calcularTotal();
     }, 200);
+    };
+
     
     console.log("EXECUTOU A FUNÇÃO FECHAR CARRINHO")
 };
 //FUNÇÃO QUE VAI ABRIR O FORMULÁRIO PARA O CLIENTE DIGITAR ENDEREÇO, NUMÉRIO ETC... E FECHAR O CARRINHO
 function AbrirFormulario(botao){
     const formulario = document.querySelector(".sectionForm")
+    const form =formulario.querySelector(".formulario")
     if(botao){
-        formulario.style.display="flex";
+        
+        formulario.classList.remove("esconde")
+
     }       
+    setTimeout(() => {
+        form.classList.add("ativo")
+    }, 30);
     fecharCarrinho(".xCarrinho")
-}
+};
 
 //FUNÇÃO QUE VAI FECHAR 
 function fecharFormulario(botao){
     const formulario = document.querySelector(".sectionForm")
+     const form =formulario.querySelector(".formulario")
     if(botao){
-        formulario.style.display="none"
+        formulario.classList.remove("ativo")
+        form.classList.remove("ativo")
+        
+        setTimeout(() => {
+            formulario.classList.add("esconde")
+            
+        }, 200);
     }
-}
+};
 
 //CHAMA A FUNÇAO ABRIR MODAL
 botaoClickado(".imgBotaoAbrirModal",abrirModal);
@@ -375,13 +396,13 @@ botaoClickado(".maisCarrinho",adicaoItemCarrinho);
 //CHAMA FUNÇÃO QUE VAI FECHAR O CARRINHO
 botaoClickado(".xCarrinho",fecharCarrinho);
 //CHAMA A FUNÇÃO DO BOTÃO DE CARRINHO PARA QUE ELE ESCONDA O CARRINHO
-botaoClickado("#cartimg",habilitarBotaoCarrinho)
+botaoClickado("#cartimg",habilitarBotaoCarrinho);
 //CHAMA A FUNÇÃO QUE VAI FAZER A ALTERAÇÃO DO VALOR DO ITEM INDIVIDUAL NO DOMADO
-botaoClickado(".itemLancheModal",checarModal)
+botaoClickado(".itemLancheModal",checarModal);
 //CHAMA A FUNÇÃO QUE VAI LIMPAR O CAMPO DE INPUT DO MODAL
-botaoClickado(".botaoModal",limparValueModal)
+botaoClickado(".botaoModal",limparValueModal);
 //CHAMA A FUNÇAO ABRIR FORMUÁRIO
-botaoClickado(".btConfirmaCompra",AbrirFormulario)
+botaoClickado(".btConfirmaCompra",AbrirFormulario);
 //CHAMA A FUNÇÃO QUE VAI ABRIR O FORMULÁRIO PARA O CLIENTE DIGITAR ENDEREÇO, NUMÉRIO ETC... E FECHAR O CARRINHO
-botaoClickado(".fecharForm ",fecharFormulario)
+botaoClickado(".fecharForm ",fecharFormulario);
 
