@@ -28,17 +28,20 @@ function abrirModal(botao){
 };
 //FUNÇÃO QUE VAI FECHAR O MODAL PARA O
 function fecharModal(botao){
+    
     const modal = botao.closest(".containerModal");
     const itemLancheModal=modal.querySelector(".itemLancheModal")
     let input = itemLancheModal.querySelector(".inputCmodal")
    
     itemLancheModal.classList.remove("ativo")
     modal.classList.remove("ativo")
-    setTimeout(() => {
+    if(modal){
+        setTimeout(() => {
         modal.classList.add("esconderModal")
         input.value=1;
-        console.log("APAGOU INPUT")
-    }, 200);
+        
+    }, 250);
+    }
    
     
     
@@ -46,6 +49,14 @@ function fecharModal(botao){
 
     console.log("EXECUTOU A FUNÇÃO fecharModal")
 };
+//FUNÇÃO QUE RESETA O CAMPO DE INPUT DO MODAL
+function limparValueModal(botao){
+    const itemModal = botao.closest(".itemLancheModal");
+    const input = itemModal.querySelector(".inputCmodal");
+    setTimeout(() => {
+        input.value=1;
+    }, 200);
+}
 //FUNÇÃO QUE VAI ALTERAR A QUANTIDADE DO ITEM ESCOLHIDO SOMANDO
 function adicionarItemModal(botao){
     const modal = botao.closest(".itemLancheModal")
@@ -59,12 +70,6 @@ function adicionarItemModal(botao){
 
     console.log("EXECUTOU A FUNÇÃO adicionar")
 };
-//FUNÇÃO QUE RESETA O CAMPO DE INPUT DO MODAL
-function limparValueModal(botao){
-    const itemModal = botao.closest(".itemLancheModal");
-    const input = itemModal.querySelector(".inputCmodal");
-    input.value=1;
-}
 //FUNÇÃO QUE VAI ALTERAR A QUANTIDADE DO ITEM ESCOLHIDO SUBTRAINDO
 function subtrairItemModal(botao){
     const modal =botao.closest(".itemLancheModal");
@@ -171,7 +176,7 @@ function colocarItemNoCarrinho(botao){
         carrinho.classList.add("ativo")
         setTimeout(() => {
             carrinho.classList.remove("esconde");
-        }, 210);
+        }, 100);
     };
     //ITEM DO MODAL
     const itemModal = containerModal.querySelector(".itemLancheModal")
@@ -234,21 +239,19 @@ function colocarItemNoCarrinho(botao){
                     let calc = precoBase *inputCarrinho.value;//CALCULA O VALOR NOVO DO ITEM
                     precoItem.textContent= `R$ ${calc.toFixed(2,".",",")}`;
                 }
-        
+                 
                 
             });
 
 
-            checarCarrinho();
+            
 
         }
+        fecharModal(botao);
+
     console.log("EXECUTOU A FUNÇÃO COLOCAR NO carrinho");
     //CHAMA A FUNÇÃO PARA FECHAR O MODAL DEPOIS DE ABRIR O CARRINHO
-    setTimeout(() => {
-        fecharModal(botao);
-    }, 50);
-
-    
+   
 };
 //FUNÇÃO QUE VAI HABILITAR O BOTÃO DO CARINHO
 function habilitarBotaoCarrinho(botao){
@@ -258,7 +261,7 @@ function habilitarBotaoCarrinho(botao){
         setTimeout(() => {
             carrinho.classList.add("ativo")
             checarCarrinho()
-        }, 20);
+        }, 100);
     }
     
     console.log("EXECUTOU A FUNÇÃO HABILITAR BOTÃO CARRINHO")
@@ -278,7 +281,9 @@ function checarCarrinho(){
     }
     if(itens.length >=1 && carrinho.classList.contains("ativo")){
         comprar.style.display="flex";
-        comprar.classList.add("ativo")
+        setTimeout(() => {
+            comprar.classList.add("ativo")
+        }, 100);
     }
     if(itens.length ==0){
         botaoCarrinho.style.display="none";
@@ -389,6 +394,79 @@ function fecharFormulario(botao){
         }, 200);
     }
 };
+/*__________________________________________________________________________________________________________________________________________________________________________________________________________________________ */
+
+//FUNÇÃO QUE VAI REALIZAR A PESQUISA DE ITENS NO SITE
+function pesquisa (){
+    let input = document.querySelector("#consultarPedido")
+    const itens = document.querySelectorAll(".sectionLanche .itemLanche")
+    
+
+    input.addEventListener("input",()=>{
+        let campo = input.value
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLowerCase();
+
+        itens.forEach(item => {
+            let itemNome = item.querySelector(".nomeLanche");
+            let nome= itemNome.textContent
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .toLowerCase();
+            if(!nome.includes(campo)){
+                item.style.display="none"
+                
+
+            }
+            else if(!item.classList.contains("excluido")){
+                    item.style.display="flex"
+                }
+           
+
+            
+        });
+    })
+
+    
+}
+
+
+
+
+
+//FUNÇÃO QUE VAI ABRIR A ABA DE LOGIN 
+function login(botao){
+    let login = document.querySelector(".login")
+    if(botao){
+        login.classList.toggle("esconde")
+    }
+}
+// FUNÇÃO QUE VAI FECHAR A ABA DE LOGIN SE CLICAR FORA DELA
+function fecharLoginArea (){
+    document.addEventListener("click",(e)=>{
+        let area = e.target;
+        let login = document.querySelector(".login")
+
+        let area1 = document.querySelector(".sectionLanche")
+        let area2 = document.querySelector("#containerNavTop")
+        let area3 = area.closest(".sectionLanche .infoLanche")
+        let area4 = area.closest(".sectionLanche .imgIndividual")
+
+        if( area==area1 && !login.classList.contains("esconde") ) { login.classList.add("esconde"); };
+        if( area==area2 && !login.classList.contains("esconde") ) { login.classList.add("esconde"); };
+        if( area==area3 && !login.classList.contains("esconde") ) { login.classList.add("esconde"); };
+        if( area==area4 && !login.classList.contains("esconde") ) { login.classList.add("esconde"); };
+
+    })
+}
+
+
+
+//CHAMA A FUNÇÃO QUE VAI ABRIR A ABA DE LOGIN
+botaoClickado(".containerImgUser",login)
+//CHAMA A FUNÇÃO QUE VAI FECHAR A ABA DE LOGIN SE CLICAR FORA DELA
+fecharLoginArea()
 
 //CHAMA A FUNÇAO ABRIR MODAL
 botaoClickado(".imgBotaoAbrirModal",abrirModal);
@@ -419,3 +497,8 @@ botaoClickado(".btConfirmaCompra",AbrirFormulario);
 //CHAMA A FUNÇÃO QUE VAI ABRIR O FORMULÁRIO PARA O CLIENTE DIGITAR ENDEREÇO, NUMÉRIO ETC... E FECHAR O CARRINHO
 botaoClickado(".fecharForm ",fecharFormulario);
 
+//CHAMA A FUNÇÃO QUE VAI REALIZAR A PESQUISA DOS ITENS NO SITE
+setTimeout(() => {
+    //CHAMA A FUNÇÃO QUE VERIFICA OS ITENS DO SITE
+    pesquisa();
+}, 200);

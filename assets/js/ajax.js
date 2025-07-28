@@ -11,6 +11,7 @@ fetch("assets/php/config.php")
         const Container = document.querySelector(".sectionLanche");
         //CLONANDO O MOLDE DO MEU ITEM
         const clone = CloneLanche.cloneNode(true);
+        clone.classList.remove("excluido")
         clone.style.display ="flex";
         //INSERINDO INFORMAÇÕES DENTRO DO ITEM LANCHE NA PARTE DE NOME
         clone.querySelector(".imgIndividual").src=`assets/images/imgLanche/${c.id_tabela_lanche}.png`;
@@ -20,6 +21,7 @@ fetch("assets/php/config.php")
         clone.setAttribute("data-preco",c.preco_tabela_lanche)
         //INSERINDO O CLONE NA ÁREA
         Container.appendChild(clone);
+
         });
 });
 

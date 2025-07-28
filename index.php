@@ -8,7 +8,7 @@
     <link rel = "icon" type ="image/x-icon" href="assets/images/logo/favicon-16x16.png">
     <title>Lanchonete</title>
 </head>
-<body>
+<body class="body">
 
     <!--INÍCIO CONFIGURAÇÃO DO NAVBAR-->
     <nav id="containerNavTop">
@@ -19,13 +19,25 @@
 
         <div class="consultarPedido">
 
-            <label for="consultarPedido">Digite o número do celular...</label>
+            <label for="consultarPedido">Pesquisar Produto...</label>
             <div class="containerBotao">
                 <input type="text" name="consultarPedido" id="consultarPedido"  placeholder="Consulte seu pedido" required>
-                <button type="button" class="botaoConsultaPedido">Consultar</button>
             </div>
 
         </div>
+        <section class="containerImgUser ">
+            <img src="assets/images/usr/user.png" alt="login"><span>Minha conta</span>
+
+        </section>
+        <section class="login esconde">
+            <label for="login">Celular</label>
+            <input type="text" name="login" id="login" placeholder="21 123456789">
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha">
+            <button type="button" class="lembrarSenha">Esqueci a senha</button>
+            <button type="button" id="entrar">Entrar</button>
+        
+        </section>
 
         <div class="containerimgCarrinho">
             <img src="assets/images/bt_img/carrinho.png" title="Abrir Carrinho" alt="Botao Abrir Carrinho" id="cartimg">
@@ -33,7 +45,7 @@
 
         <div class="containerCarrinhoNav esconde">
 
-            <ul class="item modelo">
+            <ul class="item modelo ">
                 <li class="containerImagemCarrinho">
                     <img src="assets/images/imgLanche/2.png" alt="imagem carrinho" class="imgItem" >
                 </li>
@@ -71,7 +83,7 @@
     <!--INÍCIO CONFIGURAÇÃO SECTION LANCHE-->
         <section class="sectionLanche">
             <!--INÍCIO CONFIGURAÇÃO DO ITEM LANCHE-->
-            <div class="itemLanche modelo">
+            <div class="itemLanche modelo excluido">
                 <div class="imgLanche">
                     <img src="assets/images/imgLanche/1.png" alt="lanche x" class ="imgIndividual">
                 </div>
