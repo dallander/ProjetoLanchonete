@@ -21,23 +21,25 @@
 
             <label for="consultarPedido">Pesquisar Produto...</label>
             <div class="containerBotao">
-                <input type="text" name="consultarPedido" id="consultarPedido"  placeholder="Consulte seu pedido" required>
+                <input type="text" name="consultarPedido" id="consultarPedido"  placeholder="Digite o nome do produto" required>
             </div>
 
         </div>
-        <section class="containerImgUser ">
-            <img src="assets/images/usr/user.png" alt="login"><span>Minha conta</span>
+        <div class="containerLogin">
+            <section class="containerImgUser ">
+                <img src="assets/images/usr/user.png" alt="login"><span>Minha conta</span>
 
-        </section>
-        <section class="login esconde">
-            <label for="login">Celular</label>
-            <input type="text" name="login" id="login" placeholder="21 123456789">
-            <label for="senha">Senha</label>
-            <input type="password" name="senha" id="senha">
-            <button type="button" class="lembrarSenha">Esqueci a senha</button>
-            <button type="button" id="entrar">Entrar</button>
-        
-        </section>
+            </section>
+            <section class="login esconde">
+                <label for="login">Celular</label>
+                <input type="text" name="login" id="login" placeholder="21 123456789">
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" id="senha">
+                <button type="button" class="lembrarSenha">Esqueci a senha</button>
+                <button type="button" id="entrar">Entrar</button>
+            
+            </section>
+        </div>
 
         <div class="containerimgCarrinho">
             <img src="assets/images/bt_img/carrinho.png" title="Abrir Carrinho" alt="Botao Abrir Carrinho" id="cartimg">
@@ -91,6 +93,9 @@
                     <div class="containerTituloInfoLanche">
                         <h4 class="nomeLanche">Nome lanche</h4>
                     </div>
+                    <p class="desc">
+                        asdasdd
+                    </p>
                     <div class="btnContainer">
                         <div class="imgBotaoAbrirModal">
                             <div class="containerImgImagemBotao">
@@ -102,6 +107,7 @@
 
                         </div>
                     </div>
+
                 </div>
 
                 <!--INÍCIO CONFIGURAÇÃO DO ITEM LANCHE MODAL-->
@@ -116,7 +122,9 @@
                             </div>
                             <div class="containerTituloInfoLancheModal">
                                 <h1 class="nomeLancheModal ">MOdal</h1>
-                                
+                                <p class="descModal">
+                                    asdasdd
+                                </p>
                                 <div class="qtItem">
                                 
                                     <div class="btnMenos">
@@ -137,7 +145,7 @@
 
                                 <div class="btnModal">
                                     <div class="containerValorImagemBtnModal">
-                                        <input type="button" value="Adicionar ao carrinho"  class="botaoModal" readonly>
+                                        <input type="button" value="Pôr no carrinho"  class="botaoModal" readonly>
                                     </div>
 
                                 </div>
@@ -182,6 +190,8 @@
     <script src="assets/js/eventos.js"></script>
 </body>
     <footer>
-        <h1>FOOTER</h1>
+        <img src="assets/images/logo/minhalogo.png" alt="">
+         <p>&copy; 2025 Leão. Todos os direitos reservados.</p>
+        
     </footer>
 </html>
