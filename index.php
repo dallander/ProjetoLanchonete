@@ -91,7 +91,7 @@
                 </div>
                 <div class="infoLanche">
                     <div class="containerTituloInfoLanche">
-                        <h4 class="nomeLanche">Nome lanche</h4>
+                        <p class="nomeLanche">Nome lanche</p>
                     </div>
                     <p class="desc">
                         asdasdd

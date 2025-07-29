@@ -436,8 +436,8 @@ display: flex;
 justify-content: space-between;
 background-color: #000000;
 padding: 15px;
-border-top-right-radius: 20px;
-border-bottom-left-radius: 20px;
+border-top-right-radius: 10px;
+border-bottom-left-radius: 10px;
 box-shadow: 4px 5px 4px 1px #E6B800;
 margin-right: 20px;
 margin-bottom: 20px;
@@ -477,8 +477,8 @@ padding-left: 10px;
 
 .imgBotaoAbrirModal {
 display: flex;
-border-bottom-right-radius: 13px;
-border-top-left-radius: 13px;
+border-bottom-right-radius: 5px;
+border-top-left-radius: 5px;
 background-color: #E6B800;
 color: black;
 padding: 2px;
@@ -901,31 +901,46 @@ height: 40px;
     }
 
     .itemLanche {
-        min-width: 180px;
-        height: 130px;
+        width: 150px;
+        height: 80px;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-bottom: 0px;
+       
  
     }
     .containerTituloInfoLanche {
-        font-size: 13px;
+        font-size: 8px;
+        padding: 0px;
+        word-wrap: break-word; 
     }
 
     .itemLanche img {
-        height: 100px;
-        width: 100px;
+        height: 65px;
+        width: 65px;
     }
     .imgBotaoAbrirModal{
-        height: 30px;
-        width: 110px;
-        font-size: 14px;
-
+        height: 20px;
+        width: 60px;
+        font-size: 9px;
+        font-weight: bolder;
     }
+    
     .containerImgImagemBotao{
-        height: 27px;
-
+        display: none;
     }
     .containerImgImagemBotao img {
-        height: 20px;
-        width: 20px;
+       display: none;
+    }
+
+    .infoLanche{
+        padding: 0px;
+    }
+    .nomeLanche{
+        padding-left: 3px;
+        max-width: 75px;
+        word-wrap: break-word; 
+        white-space: normal; 
     }
  
     /*MODAL */
@@ -935,10 +950,12 @@ height: 40px;
         height: 450px;
         flex-direction: column;
         justify-content: space-evenly;
+        padding-top: 25px;
     }
     .itemLancheModal img{
-        width: 170px;
+        width: 175px;
         height: 170px;
+       
     }
 
     .infoLancheModal .containerTituloInfoLancheModal .nomeLancheModal {
@@ -971,7 +988,7 @@ height: 40px;
 
 
 /*CONFIGURAÇÃO DO NAV*/
-@media(min-width:490px) and (max-width:680px){
+@media(min-width:490px) and (max-width:772px){
     #containerNavTop {
         width: 100vw;
         background-color: #ffd000;
@@ -1034,31 +1051,37 @@ height: 40px;
     }
 
     .itemLanche {
-        min-width: 180px;
-        height: 130px;
+        width: 180px;
+        height: 120px;
+        padding: 0px;
+        padding-left: 5px;
+        padding-top: 5px;
  
     }
     .containerTituloInfoLanche {
-        font-size: 13px;
+        font-size: 8px;
+        padding: 0px;
+        word-wrap: break-word; 
     }
 
     .itemLanche img {
-        height: 100px;
-        width: 100px;
+        height: 70px;
+        width: 70px;
     }
     .imgBotaoAbrirModal{
         height: 30px;
-        width: 110px;
+        width: 80px;
         font-size: 14px;
 
     }
     .containerImgImagemBotao{
         height: 27px;
-
+        display: none;
     }
     .containerImgImagemBotao img {
         height: 20px;
         width: 20px;
+        display: none;
     }
  
     /*MODAL */
@@ -1072,10 +1095,6 @@ height: 40px;
     .itemLancheModal img{
         width: 170px;
         height: 170px;
-    }
-
-    .infoLancheModal .containerTituloInfoLancheModal .nomeLancheModal {
-        font-size: 15px;
     }
     .qtItem {
         width: 100%;
@@ -1097,6 +1116,15 @@ height: 40px;
         display: flex;
         font-size: 13px;
 
+    }
+    .nomeLanche{
+        width: 89px;
+        font-size: 10px;
+        font-weight: bold;
+        word-wrap: break-word;
+    }
+    .infoLanche{
+        padding-left: 2px;
     }
 
 }
